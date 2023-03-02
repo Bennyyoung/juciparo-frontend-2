@@ -1,0 +1,130 @@
+.order {
+    max-width: 100vw;
+    min-height: 240vh;
+    align-items: center;
+    background: #ffffff;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    top: 130px;
+}
+
+.order > h2 {
+    position: relative;
+    margin-top: 33px;
+    width: 80%;
+    height: 42px;
+    color: #000000;
+    left: 0%;
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 35px;
+    line-height: 42px;
+    text-align: center;
+}
+
+.order > h4 {
+    position: relative;
+    top: -20px;
+    left: 0%;
+    width: 60%;
+    text-align: center;
+    height: 84px;
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    color: #212121;
+}
+
+.order > .helpCard {
+    position: relative;
+    width: 80%;
+    height: 188px;
+    left: 0%;
+    background: #F4F4F4;
+    border-radius: 5px;
+    padding-left: 20px;
+}
+
+.order > .helpCard > h4 {
+    position: absolute;
+    top: 24px;
+    width: 512px;
+    height: 24px;
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    color: #000000;
+    text-align: start;
+}
+
+.order > .helpCard > p {
+    position: absolute;
+    top: 53px;
+    width: 90%;
+    height: 102px;
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 18px;
+    color: #212121;
+}
+
+
+
+
+/* RESPONSIVENESS  */
+@media only screen and (max-width: 1439px) and (min-width: 1201px)  {
+
+}
+
+@media only screen and (max-width: 1100px)  {
+    
+}
+
+@media screen and (max-width: 960px) {
+   .order {
+        top: 100px;
+        min-height: 240vh;
+   }
+}
+
+@media screen and (max-width: 770px) {
+    .order {
+        min-height: 230vh;
+    }
+    .order > .helpCard > p {
+        font-size: 25px;
+        line-height: 25px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .order {
+        min-height: 210vh;
+    }
+    .order > h2 {
+        height: 80px;
+    }
+    .order > .helpCard {
+        height: 150px;
+    }
+    .order > .helpCard > h4 {
+        width: 90%;
+        padding-left: 10%;
+    }
+    .order > .helpCard > p {
+        font-size: 25px;
+        line-height: 25px;
+    }
+    
+}
+

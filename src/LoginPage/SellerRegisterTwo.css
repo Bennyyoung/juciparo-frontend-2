@@ -1,0 +1,100 @@
+.sellform {
+    height: 1360px;
+    width: 600px;
+    position: relative;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.sellform-body {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.sellform-body > div {
+    position: relative;
+    width: 509px;
+    height: 102px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 22px;
+}
+
+.sellform-body > div > label {
+    height: 42px;
+    width: 100%;
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 18px;
+    color: #000000;
+}
+
+.sellform-body > div > input {
+    height: 60px;
+    width: 100%;
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 12px;
+    color: #8C8C8C;
+    padding-left: 20px;
+    padding-top: auto;
+}
+
+.sellform-body > div > h5 {
+    position: absolute;
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 18px;
+    color: #000000;
+}
+
+.sellform-body > a {
+    position: relative;
+    width: 509px;
+    height: 59.79px;
+    background: #EF0000;
+    border: 1px solid #EF0000;
+    border-radius: 5px;
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 18px;
+    color: #FDFDFD;
+    text-align: center;
+    text-decoration: none;
+    padding-top: 23px;
+    top: 50px;
+}
+
+@media screen and (max-width: 600px) {
+    .sellform {
+        width: 90%;
+    }
+    .sellform-body {
+        width: 90%;
+        left: 5%;
+    }
+    .sellform-body > div {
+        width: 100%;
+    }
+    .sellform-body > a {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 479px) {
+
+}

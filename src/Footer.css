@@ -1,0 +1,231 @@
+.footer__container {
+    position: relative;
+    height: 331px;
+    width: 100vw;
+    background: var(--secondary400);
+}
+
+.footer__container > img {
+    position: absolute;
+    top: 24px;
+    left: 135px;
+    width: 197px;
+    height: 132px;
+}
+
+.footer__container > a {
+    width: 44px;
+    position: absolute;
+    height: 44px;
+    top: 122px;
+    left: 135px;
+    background: var(--primary300);
+    border-radius: 50%;
+    z-index: 1;
+    padding: 12px;
+    color: black;
+}
+
+.footer__container > a > svg.iconify.iconify--ei {
+    padding: 0px;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    left: 7px;
+    top: 6px;
+}
+
+.footer__container > a:nth-child(2) {
+    width: 44px;
+    position: absolute;
+    height: 44px;
+    top: 122px;
+    left: 191px;
+    background: var(--primary300);
+    border-radius: 50%;
+    z-index: 1;
+    padding: 12px;
+}
+
+.footer__container > a:nth-child(2) > svg.iconify.iconify--ant-design {
+    padding: 0px;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    left: 7px;
+    top: 7px;
+}
+
+
+.footer__container > a:nth-child(3) {
+    width: 44px;
+    position: absolute;
+    height: 44px;
+    top: 122px;
+    left: 247px;
+    background: var(--primary300);
+    border-radius: 50%;
+    z-index: 1;
+    padding: 12px;
+}
+
+
+.footer__container > a:nth-child(3) > svg.iconify.iconify--ant-design {
+    padding: 0px;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    left: 7px;
+    top: 5px;
+}
+
+.footer__list {
+    position: relative;
+    left: 700px;
+    width: 51%;
+    height: 300px;
+    display: flex;
+    flex-direction: row;
+    gap: 108px;
+}
+
+.footer__list > ul {
+    position: relative;
+    width: 107px;
+    height: 148px;
+    list-style-type: none;
+    top: 74px;
+    text-align: start;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer__list > ul > a:nth-child(1) {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    margin-bottom: 16px;
+    color: var(--primary300);
+    cursor: pointer;
+}
+
+.footer__list > ul > a {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 18px;
+    color: var(--primary400);
+    margin-bottom: 11px;
+    width: 137px;
+    text-decoration: none;
+    cursor: pointer;
+}
+/*
+.footer__list > ul > li > a {
+    width: 100%;
+    position: inherit;
+    text-decoration: none;
+}
+
+*/
+
+/* RESPONSIVENESS  */
+
+@media only screen and (max-width: 1200px)  {
+    .footer__list {
+        left: 50%;
+        gap: 5%;
+    }
+}
+
+@media screen and (max-width: 960px) {
+    .footer__container > img {
+        left: 1%;
+    }
+    .footer__container a:nth-child(2) {
+        left: 1%;
+    }
+    .footer__container a {
+        left: 8%;
+    }
+    .footer__container a:nth-child(3) {
+        left: 15%;
+    }
+    .footer__list {
+        left: 40%;
+        gap: 3%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .footer__container {
+        height: 65vh;
+    }
+    .footer__container a:nth-child(2) {
+        left: 1%;
+    }
+    .footer__container a {
+        left: 11%;
+    }
+    .footer__container a:nth-child(3) {
+        left: 20%;
+    }
+    .footer__list {
+        left: 50%;
+        gap: 3%;
+        flex-direction: column;
+    }
+    .footer__list > ul {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    .footer__list > ul > a {
+        font-size: 12px;
+        width: 100%!important;
+    }
+    .footer__list > ul > a:nth-child(1) {
+        font-size: 30px;
+        margin-bottom: 20px;
+    }
+}
+
+@media screen and (max-width: 479px) {
+    .footer__container {
+        height: 70vh;
+        overflow-x: scroll;
+    }
+    .footer__container a {
+        left: 14.5%;
+    }
+    .footer__container a:nth-child(3) {
+        left: 28%;
+    }
+
+    .footer__list {
+        left: 60%;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .footer__container > img {
+        width: 157px;
+    }
+    .footer__container a {
+        width: 35px;
+        height: 40px;
+    }
+    .footer__container a:nth-child(3) {
+        width: 35px;
+        height: 40px;
+    }
+    .footer__container a:nth-child(2) {
+        width: 35px;
+        height: 40px;
+    }
+    
+
+}

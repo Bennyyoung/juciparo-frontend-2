@@ -1,0 +1,123 @@
+.sell {
+    position: relative;
+    width: 80%;
+    height: 313px;
+    background: #F4F4F4;
+    border-radius: 5px;
+    left: 121px;
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: row;
+}
+
+.sell > div {
+    position: absolute;
+    width: 193.29px;
+    height: 150px;
+    left: 15%;
+    top: 86px;
+    display: flex;
+    flex-direction: column;
+}
+
+.sell > div > h4 {
+    position: absolute;
+    top: 10px;
+    width: 153.29px;
+    height: 31px;
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 30px;
+    line-height: 36px;
+    color: #000000;
+}
+
+.sell > div > p {
+    position: absolute;
+    top: 50px;
+    width: 203.29px;
+    height: 31px;
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 30px;
+    line-height: 36px;
+    color: #000000;
+}
+.sell > div > a {
+    position: absolute;
+    bottom: 0px;
+    width: 136.74px;
+    height: 54px;
+    background: #EF0000;
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+    padding-top: 17px;
+    text-decoration: none;
+}
+
+.sell > img {
+    position: absolute;
+    width: 461px;
+    height: 279px;
+    top: 17px;
+    right: 10%;
+}
+
+
+/* RESPONSIVENESS  */
+@media only screen and (max-width: 1439px) and (min-width: 1201px)  {
+
+}
+
+@media only screen and (max-width: 1200px)  {
+    .sell > div {
+        left: 5%;
+    }
+}
+
+@media screen and (max-width: 960px) {
+    .sell {
+        left: 10%;
+        margin-top: 100px;
+    }
+    .sell > img {
+        position: absolute;
+        width: 250px;
+        height: 170px;
+        right: 10%;
+        top: 90px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .sell {
+        height: 80vh;
+        flex-direction: column;
+    }
+    .sell > div {
+        left: 25%;
+        top: 50px;
+    }
+    .sell > img {
+        top: 250px;
+        left: 20%;
+    }
+}
+
+@media screen and (max-width: 479px) {
+    .sell {
+        top: -100px;
+    }
+    .sell > div {
+        left: 10%;
+        height: 155px;
+    }
+    .sell > img {
+        left: 10%;
+        width: 80%;
+    }
+}
+

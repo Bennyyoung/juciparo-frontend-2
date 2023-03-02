@@ -1,0 +1,86 @@
+.createAccount {
+    width: 100vw;
+    min-height: 100vh;
+    background: #ffffff;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    margin-bottom: 100px;
+}
+
+.createAccount .create__head {
+    position: relative;
+    width: 400px;
+    height: 213px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.createAccount .create__head > a {
+    position: absolute;
+    width: 169px;
+    height: 113px;
+    top: 29px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.createAccount .create__head > img {
+    position: absolute;
+    width: 169px;
+    height: 113px;
+    top: 29px;
+}
+
+.createAccount .create__head > h3 {
+    position: absolute;
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 36px;
+    color: #000000;
+    top: 125.34px;
+}
+
+.createAccount .create__head > h5 {
+    position: absolute;
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 18px;
+    color: #212121;
+    top: 166.97px;
+    text-align: start;
+}
+
+
+/* RESPONSIVENESS  */
+@media only screen and (max-width: 1439px) and (min-width: 1201px)  {
+
+}
+
+@media only screen and (max-width: 1200px)  {
+    
+}
+
+@media screen and (max-width: 960px) {
+
+}
+
+@media screen and (max-width: 600px) {
+
+}
+
+@media screen and (max-width: 370px) {
+    .createAccount .create__head > h3 {
+        font-size: 25px;
+    }
+    .createAccount .create__head > h5 {
+        font-size: 10px;
+    }
+}
+

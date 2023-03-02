@@ -1,0 +1,29 @@
+.cart__section {
+    min-height: 200vh;
+    width: 100vw;
+    position: relative;
+    top: 200px;
+}
+
+.cart__container {
+    max-width: 100vw;
+    min-height: 30vh;
+    background: #ffffff; 
+    position: relative;
+    left: 136px;
+    display: flex;
+    flex-direction: row;
+    gap: 26px;
+}
+
+@media screen and (max-width: 960px) {
+    .cart__section {
+        top: 130px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .cart__section {
+        top: 80px;
+    }
+}

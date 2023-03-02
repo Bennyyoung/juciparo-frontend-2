@@ -1,0 +1,23 @@
+.introPage__container {
+    max-width: 100vw;
+    min-height: 250vh;
+    align-items: center;
+    background: #ffffff;
+    position: relative;
+    top: 170px;
+}
+
+@media screen and (max-width: 960px) {
+    .introPage__container {
+        min-height: 380vh;
+        top: 140px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .introPage__container {
+        min-height: 410vh;
+        top: 130px;
+    }
+}
+

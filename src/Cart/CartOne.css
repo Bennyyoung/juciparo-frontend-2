@@ -1,0 +1,203 @@
+.cartOne__container {
+    position: relative;
+    width: 40%;
+    /* min-height: 30vh; */
+    height: 30vh;
+    left: 0px;
+    background: #F4F4F4;
+    border-radius: 5px;
+    overflow-y: scroll;
+}
+
+.cartOne__container > h4 {
+    position: absolute;
+    top: 37px;
+    width: 106px;
+    height: 24px;
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    color: #000000;
+}
+
+.cartBox {
+    height: 105px;
+    width: 100%;
+    position: relative;
+    top: 87px;
+    display: flex;
+    flex-direction: row;
+}
+
+.cart__left {
+    position: relative;
+    height: 100%;
+    width: 50%;
+    float: left;
+    display: flex;
+}
+
+.cart__left > img {
+    width: 105px;
+    height: 105px;
+    left: 0px;
+}
+.cart__left > h5 {
+    position: absolute;
+    right: 1%;
+    width: 58%;
+    height: 94px;
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    color: #000000;
+}
+
+.cart__right {
+    position: relative;
+    height: 100%;
+    width: 50%;
+    float: right;
+    display: flex;
+    flex-direction: row;
+    right: 0px;
+}
+
+
+.cart__right > div {
+    width: 71px;
+    height: 60px;
+    border: 1px solid #8C8C8C;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 1px;
+    left: 20%;
+    position: absolute;
+}
+
+.cart__right > div > .cart__menuIcon {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 16px;
+    height: 26px;
+}
+
+.cart__menuIcon > button {
+    border-color: transparent;
+    background: transparent;
+}
+.cart__menuIcon > button:focus {
+    border-color: transparent;
+    border-width: 0;
+}
+
+.cart__right > h4 {
+    position: absolute;
+    right: 25%;
+    width: 70px;
+    height: 24px;
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    color: #000000;
+}
+
+.cart__right > button {
+    position: absolute;
+    right: 5%;
+    width: 24px;
+    height: 24px;
+    border-width: 1px;
+    border-color: black;
+}
+
+
+
+/* RESPONSIVENESS  */
+
+
+@media screen and (max-width: 960px) {
+    .cart__container {
+        left: 5%;
+    }
+    .cart__right > div {
+        width: 28%;
+        height: 40px;
+        left: 5%;
+    }
+    .cart__right > h4 {
+        right: 20%;
+        font-size: 16px;
+    }
+    .cart__left > img {
+        width: 50%;
+        position: absolute;
+        left: 5%;
+    }
+    .cart__left > h5 {
+        width: 40%;
+        font-size: 10px;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 670px) {
+    .cart__container {
+        min-height: 120vh;
+        flex-direction: column;
+    }
+    .cartOne__container {
+        width: 80%;
+        height: 230px;
+        left: 5%;
+        top: 50px;
+    }
+    .cart__left {
+        width: 70%;
+    }
+    .cart__left > h5 {
+        width: 40%;
+        font-size: 11px;
+        font-weight: 800;
+        line-height: 15px;
+    }
+    .cart__right {
+        display: flex;
+        flex-direction: column;
+    }
+    .cart__right > svg.iconify.iconify--iconoir {
+        right: 40%;
+        top: 80px;
+    }
+    .cart__right > div {
+        height: 40px;
+        left: unset;
+        right: 25%;
+        width: 71px;
+    }
+    .cart__right > h4 {
+        right: 20%;
+        font-size: 16px;
+        top: 50px;
+    }
+}
+
+@media screen and (max-width: 530px) {
+    .cart__right > button {
+        right: 0%;
+    }
+    .cart__right > div {
+        width: 50px;
+        right: 40%;
+    }
+}

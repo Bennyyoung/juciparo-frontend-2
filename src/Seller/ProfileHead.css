@@ -1,0 +1,367 @@
+.profileHead {
+    position: absolute;
+    width: 100%;
+    height: 249px;
+    background: #F4F4F4;
+    top: 21px;
+    display: flex;
+    flex-direction: row;
+    gap: 89px;
+}
+
+.profileHead > .avatar__section {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 15%;
+    height: 220px;
+    left: 11px;
+    top: 15px;
+    align-items: center;
+}
+
+.css-nen11g-MuiStack-root {
+    width: 100%;
+    height: 143px;
+    position: relative;
+}
+
+.MuiAvatar-root.MuiAvatar-circular.MuiAvatar-colorDefault.css-1upixug-MuiAvatar-root {
+    width: 143px;
+    height: 143px;
+    background: #ffffff;
+}
+
+.MuiAvatar-root.MuiAvatar-circular.MuiAvatar-colorDefault.css-1upixug-MuiAvatar-root  > svg.iconify.iconify--fontisto {
+    width: 32px;
+    color: black;
+    height: 24px;
+}
+
+.avatar__section > h4 {
+    position: relative;
+    width: 100%;
+    height: 24px;
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    color: #000000;
+    padding-left: 10px;
+    margin-bottom: 0px;
+}
+
+.avatar__section > .profileHead__star {
+    display: flex;
+    flex-direction: row;
+    gap: 2.75px;
+    width: 100%;
+    position: relative;
+    height: 22px;
+    left: 5%;
+    align-items: flex-start;
+}
+
+.profileHead__star > svg.iconify.iconify--clarity {
+    width: 22px;
+    height: 22px;
+    color: #FFC107;
+}
+
+.avatar__section > p {
+    position: absolute;
+    width: 100%;
+    height: 18px;
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 18px;
+    color: #000000;
+    top: 200px;
+    left: 5%;
+}
+
+.profileHead__deli {
+    position: relative;
+    height: 100%;
+    width: 50%;
+    display: flex;
+    gap: 25px;
+    align-items: flex-end;
+}
+.profileHead__deli > h4 {
+    width: 160px;
+    height: 26px;
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    color: #000000;
+}
+
+.profileHead__deli > div {
+    width: 47%;
+    height: 100px;
+    bottom: 0px;
+    display: flex;
+    flex-direction: column;
+}
+
+.profileHead__deli > div > h4 {
+    width: 100%;
+}
+
+.progress {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    height: 3rem;
+    width: 100%;
+    overflow: hidden;
+    font-size: .75rem;
+    background-color: white;
+    border-radius: 5px;
+}
+
+.progress-bar {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    color: #fff;
+    text-align: center;
+    background-color: #8C8C8C;
+    transition: width .6s ease;
+}
+
+
+.profileHead__fol {
+    position: relative;
+    height: 100%;
+    width: 40%;
+    /* background: rgb(50, 143, 205); */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.fol__top {
+    position: absolute;
+    width: 70%;
+    height: 65px;
+    display: flex;
+    top: 19px;
+    justify-content: space-between;
+    right: 0px;
+    align-self: flex-end;
+    align-items: center;
+}
+
+.fol__top > h4 {
+    width: 45%;
+    height: 22px;
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    /* identical to box height */
+    color: #212121;
+}
+
+.fol__top > button {
+    right: 3%;
+    position: absolute;
+    width: 40%;
+    height: 65px;
+    background: #EF0000;
+    border-color: #EF0000;
+    border-radius: 5px;
+    border-width: 0px;
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    color: #FDFDFD;
+}
+
+.fol__bottom {
+    height: 100px;
+    width: 77%;
+    position: relative;
+    display: flex;
+    gap: 21px;
+    right: 2%;
+    align-self: flex-end;
+    margin-bottom: 15px;
+}
+
+.fol__bottom > div {
+    width: 45%;
+    height: 100px;
+    background: #FDFDFD;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.fol__bottom > div > svg.iconify.iconify--fontisto {
+    width: 48px;
+    height: 48px;
+    color: #EF0000;
+}
+
+.fol__bottom > div > svg.iconify.iconify--mdi {
+    width: 54px;
+    height: 54px;
+    color: #EF0000;
+}
+
+.fol__bottom > div > div {
+    display: flex;
+    flex-direction: column;
+    width: 69px;
+    height: 58px;
+    right: 9px;
+    background: #FDFDFD;
+    border-radius: 5px;
+}
+
+.fol__bottom > div > div > h4 {
+    width: 78px;
+    height: 22px;
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 22px;
+    color: #000000;
+}
+
+.fol__bottom > div > div > p {
+    width: 69px;
+    height: 36px;
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 18px;
+    color: #212121;
+    text-align: start;
+    top: 40px;
+}
+
+
+
+/* RESPONSIVENESS  */
+@media only screen and (max-width: 1439px) and (min-width: 1201px)  {
+    .profileHead__fol {
+        width: 40%;
+    }
+    
+}
+
+@media only screen and (max-width: 1024px)  {
+    .profileHead {
+        gap: 59px;
+    }
+    .profileHead > .avatar__section {
+        width: 30%;
+    }
+    .profileHead__deli {
+        flex-direction: column;
+        align-items: center;
+        height: 80%;
+        top: 50px;
+    }
+    .profileHead__deli > div {
+        width: 100%;
+    }
+    .fol__top {
+        width: 100%;
+    }
+    .fol__bottom {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 770px) {
+    .profileHead {
+        height: 130vh;
+        flex-direction: column;
+        align-items: center;
+    }
+    .profileHead > .avatar__section {
+        width: 40%;
+        left: unset;
+    }
+    .css-nen11g-MuiStack-root {
+        width: 100%;
+        height: 150px;
+        margin-bottom: 5px;
+    }
+    .MuiAvatar-root.MuiAvatar-circular.MuiAvatar-colorDefault.css-1upixug-MuiAvatar-root {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: #ffffff;
+    }
+
+    .avatar__section > h4 {
+        text-align: center;
+    }
+    .avatar__section > .profileHead__star {
+        left: unset;
+        width: 33%;
+    }
+    .avatar__section > p {
+        text-align: center;
+        width: 80%;
+    }
+    .profileHead__deli {
+        width: 70%;
+    }
+    .profileHead__fol {
+        width: 90%;
+        left: 5%;
+    }
+    .fol__top {
+        width: 100%;
+        position: absolute;
+        right: 2%;
+    }
+    .fol__top > button {
+        right: 7%;
+    }
+
+
+}   
+
+
+@media screen and (max-width: 500px) {
+    .avatar__section > h4 {
+        font-size: 20px;
+    }
+    .avatar__section > .profileHead__star {
+        left: unset;
+        width: 83%;
+        top: 20px;
+    }
+    .avatar__section > p {
+        top: 220px;
+    }
+    .fol__bottom > div > div > p {
+        font-size: 12px;
+    }
+}
+

@@ -1,0 +1,151 @@
+.discuss__container {
+    position: relative;
+    width: 85%;
+    height: 474px;
+    left: 7%;
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    margin-top: 39px;
+}
+
+.discuss__card {
+    position: relative;
+    width: 370px;
+    height: 474px;
+    display: flex;
+    flex-direction: column;
+}
+
+.discuss__card > img {
+    position: absolute;
+    width: 100%;
+    height: 358px;
+}
+
+.discuss__card > h3 {
+    position: absolute;
+    width: 303px;
+    height: 31px;
+    top: 384px;
+    font-family: 'Montserrat' sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 22px;
+    color: #000000;
+}
+
+.discuss__card > p {
+    position: absolute;
+    width: 238px;
+    height: 25px;
+    top: 410px;
+    font-family: 'Montserrat' sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 18px;
+    color: #000000;
+    padding: 0px;
+    text-align: start;
+}
+
+
+
+/* RESPONSIVENESS  */
+@media only screen and (min-width: 1400px)  {
+    .discuss__container {
+        width: 87%;
+        gap: 50px;
+    }
+}
+
+@media only screen and (max-width: 1200px)  {
+    
+    div.discuss__card {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 960px) {
+    .discuss__container {
+        margin-bottom: 10%;
+        height: 540px;
+    }
+    div.discuss__card > h3 {
+        width: 100%;
+        height: 50px;
+    }
+    div.discuss__card > p {
+        width: 100%;
+        top: 430px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .discuss__container {
+        left: 5%;
+        min-height: 150vh;
+        width: 90%;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    div.discuss__card {
+        width: 100%;
+        height: 400px;
+    }
+
+    div.discuss__card > img {
+        height: 70%;
+    }
+
+    div.discuss__card > h3 {
+        top: 250px;
+    }
+    div.discuss__card > p {
+        top: 275px;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 479px) {
+    .discuss__container {
+        margin-top: 20%;
+        align-items: center;
+        min-height: 150vh!important;
+    }
+    div.discuss__card {
+        width: 90%;
+        height: 400px!important;
+    }
+    div.discuss__card > h3 {
+        top: 230px;
+    }
+    div.discuss__card > p {
+        top: 255px!important;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 335px) {
+    .discuss__container {
+        margin-top: 20%;
+        align-items: center;
+        min-height: 150vh!important;
+    }
+    div.discuss__card {
+        width: 90%;
+        height: 400px!important;
+    }
+    div.discuss__card > h3 {
+        top: 215px;
+        font-size: 15px;
+    }
+    div.discuss__card > p {
+        top: 240px!important;
+        width: 100%;
+        font-size: 15px;
+    }
+}

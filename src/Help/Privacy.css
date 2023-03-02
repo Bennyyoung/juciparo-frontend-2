@@ -1,0 +1,148 @@
+.privacy {
+    max-width: 100vw;
+    min-height: 320vh;
+    align-items: center;
+    background: #ffffff;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    top: 130px;
+}
+
+.privacy > h2 {
+    position: relative;
+    margin-top: 33px;
+    width: 80%;
+    height: 42px;
+    color: #000000;
+    left: 0%;
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 35px;
+    line-height: 42px;
+    text-align: center;
+}
+
+.privacy > h4 {
+    position: relative;
+    top: -20px;
+    left: 0%;
+    width: 60%;
+    text-align: center;
+    height: 84px;
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    color: #212121;
+}
+
+.privacy > .helpCard {
+    position: relative;
+    width: 80%;
+    height: 188px;
+    left: 0%;
+    background: #F4F4F4;
+    border-radius: 5px;
+}
+
+.privacy > .helpCard > h4 {
+    position: absolute;
+    top: 24px;
+    width: 512px;
+    height: 24px;
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    color: #000000;
+    text-align: start;
+}
+
+.privacy > .helpCard > p {
+    position: absolute;
+    top: 53px;
+    width: 90%;
+    height: 102px;
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 18px;
+    color: #212121;
+}
+
+
+
+
+/* RESPONSIVENESS  */
+@media only screen and (max-width: 1439px) and (min-width: 1201px)  {
+
+}
+
+@media only screen and (max-width: 1100px)  {
+    .privacy > .helpCard {
+        height: 200px;
+    }
+}
+
+@media screen and (max-width: 960px) {
+    .privacy {
+        min-height: 400vh;
+        top: 100px;
+    }
+    .privacy > .helpCard {
+        height: 160px;
+        height: 220px;
+    }
+    .privacy > .helpCard > h4 {
+        height: 68px;
+    }
+    .privacy > .helpCard > p {
+        line-height: 16px;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .privacy {
+        min-height: 420vh;
+    }
+    .privacy > .helpCard {
+        height: 160px;
+        height: 300px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .privacy {
+        min-height: 580vh;
+    }
+    .privacy > h4 {
+        height: 150px;
+    }
+    .privacy > .helpCard {
+        height: 450px;
+    }
+    .privacy > .helpCard > h4 {
+        height: 88px;
+        width: 90%;
+        text-align: center;
+    }
+    .privacy > .helpCard > p {
+        top: 100px;
+        text-align: center;
+        width: 95%;
+    }
+}
+
+
+@media screen and (max-width: 360px) {
+    .privacy > h4 {
+        height: 170px;
+    }
+}

@@ -1,0 +1,143 @@
+.cartSummary {
+    position: relative;
+
+
+    height: 280px;
+    border-radius: 5px;
+    right: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+}
+
+.cartSummary > div {
+    height: 209px;
+    margin-bottom: 3rem;
+    width: 100%;
+    background: #F2F2F2;
+    display: flex;
+    flex-direction: column;
+}
+
+.cartSummary > div > h4 {
+    position: absolute;
+    top: 42px;
+    left: 30px;
+    width: 90%;
+    height: 22px;
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    color: #000000;
+}
+
+.cartSummary > div > 
+.cartSummary__row {
+    top: 86px;
+    position: absolute;
+    width: 90%;
+    left: 30px;
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+}
+
+.cartSummary__row > div {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0px;
+}
+
+.cartSummary__row > div:nth-child(2) {
+    width: 100%;
+    height: 50px;
+}
+
+.cartSummary__row > div:nth-child(2) > h5 {
+    width: 90%;
+    height: 50px;
+}
+
+
+.cartSummary__row > div > h4 {
+    width: 50%;
+    height: 24px;
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    color: #000000;
+}
+
+.cartSummary__row > div > h5 {
+    height: 22px;
+    width: 50%;
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    color: #212121;
+}
+
+
+.cartSummary > a {
+    margin-top: 1.5rem;
+    width: 20%;
+    position: absolute;
+    top: 220px;
+    height: 60px;
+    background: var(--tertiary300);
+    border-radius: 5px;
+    text-align: center;
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    color: #FDFDFD;
+    text-decoration: none;
+    padding-top: 18px;
+    cursor: pointer;
+}
+
+
+/* RESPONSIVENESS  */
+
+@media screen and (max-width: 960px) {
+    .cartSummary {
+        width: 30%;
+    }
+    .cartSummary > div > h4 {
+        left: 5%;
+    }
+    .cartSummary > div > .cartSummary__row {
+        left: 5%;
+        width: 95%;
+    }
+}
+
+@media screen and (max-width: 670px) {
+    .cartSummary {
+        width: 80%;
+        left: 5%;
+        top: 50px;
+    }
+    .cartSummary__row > div > h4 {
+        font-size: 16px;
+    }
+    .cartSummary__row > div:nth-child(2) > h5 {
+        font-size: 15px;
+    }
+    .cartSummary > a {
+        top: 250px;
+    }
+}
+
+@media screen and (max-width: 479px) {
+
+}

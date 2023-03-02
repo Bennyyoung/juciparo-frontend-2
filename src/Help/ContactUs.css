@@ -1,0 +1,141 @@
+.contact {
+    min-height: 150vh;
+    width: 80%;
+    position: relative;
+    left: 9%;
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    top: 150px;
+}
+.contact > h2 {
+    position: relative;
+    width: 173px;
+    height: 42px;
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 35px;
+    line-height: 42px;
+    color: #000000;
+    top: 30px;
+}
+
+.contact > div {
+    height: 60%;
+    width: 100%;
+    position: relative;
+    top: 80px;
+    display: flex;
+    flex-direction: row;
+    gap: 107px;
+    align-items: center;
+}
+
+.contact > div > img {
+    width: 45%;
+    height: 317px;
+    background: #F4F4F4;
+    border-radius: 5px;
+}
+
+.details {
+    width: 317px;
+    height: 150px;
+}
+
+.details > h2 {
+    width: 251px;
+    height: 42px;
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 35px;
+    line-height: 42px;
+    color: #000000;
+}
+
+.details > h4 {
+    width: 317px;
+    height: 60px;
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    color: #212121;
+}
+
+
+/* RESPONSIVENESS  */
+@media screen and (max-width: 960px) {
+    .contact {
+        min-height: 160vh;
+        top: 120px;
+    }
+    .contact > div {
+        top: 100px;
+        height: 100%;
+        flex-direction: column;
+    }
+
+    .contact > div > img {
+        width: 70%;
+    }
+
+    .details {
+        width: 70%;
+        align-items: center;
+        background-color: gray;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .details > h2 {
+        width: 100%;
+        text-align: center;
+    }
+    .details > h4 {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .contact > div > img {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 479px) {
+    .contact {
+        min-height: 120vh;
+        top: 80px;
+    }
+    .contact > div > img {
+        height: 25%;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 479px) {
+    .details {
+        height: 160px!important;
+        width: 85%;
+        position: relative;
+        top: -50px;
+    }
+    .details > h2 {
+        font-size: 30px;
+        color: white;
+    }
+    .details > h4 {
+        font-size: 18px;
+        width: 100%;
+        text-align: center;
+        color: white;
+        top: 5px;
+        position: relative;
+    }
+}
+

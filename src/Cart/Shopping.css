@@ -1,0 +1,33 @@
+.shopping {
+    min-height: 80vh;
+    width: 100%;
+    position: relative;
+    left: 136px;
+    margin-top: 50px;
+}
+
+
+/* RESPONSIVENESS  */
+@media only screen and (max-width: 1439px) and (min-width: 1201px)  {
+
+}
+
+@media only screen and (max-width: 1200px)  {
+    
+}
+
+@media screen and (max-width: 960px) {
+
+}
+
+@media screen and (max-width: 600px) {
+    .shopping {
+        margin-top: 120px;
+    }
+}
+
+@media screen and (max-width: 479px) {
+    .shopping {
+        left: 20%;
+    }
+}
