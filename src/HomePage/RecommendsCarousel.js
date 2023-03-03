@@ -116,7 +116,9 @@ function RecommendsCarousel () {
         <div className="recommends-carousel-wrapper">
           <div className='wrappers-text'>
             <h4>Recommended For You</h4>
-            <h5>See All</h5>
+            <Link to="/category">
+                <h5>See All</h5>
+            </Link>
           </div>
           <Slider {...settings}>
 

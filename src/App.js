@@ -29,6 +29,7 @@ import ContactUs from './Help/ContactUs';
 import Terms from './Help/Terms';
 import PlaceOrder from "./Help/PlaceOrder"
 import SavedItem from './Seller/SavedItem';
+import Category from './category/Category';
 
 
 function App() {
@@ -64,6 +65,8 @@ function App() {
           <Route path='ContactUs/' exact element={<ContactUs />}  />
           <Route path='Terms/' exact element={<Terms />}  />
           <Route path='PlaceOrder/' exact element={<PlaceOrder />}  />
+
+          <Route path='category/' exact element={<Category />}  />
         </Routes> 
         </ScrollToTop>
       </Router>

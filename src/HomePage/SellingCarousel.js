@@ -115,7 +115,9 @@ function SellingCarousel() {
       <div className="selling-carousel-wrapper">
         <div className='wrappers-text'>
           <h4>Most Selling Products</h4>
-          <h5>See All</h5>
+          <Link to="/category">
+              <h5>See All</h5>
+          </Link>
         </div>
         <Slider {...settings}>
           {data?.map((product) => {
