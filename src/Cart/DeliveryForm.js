@@ -46,7 +46,7 @@ function DeliveryForm() {
             <div className="deliform-body">
                 <div>
                     <label  htmlFor="firstName">First Name </label>
-                    <input  type="text" value={firstName} onChange = {(e) => handleInputChange(e)} id="firstName" placeholder="First Name"/>
+                    <input  type="text" name="" value={firstName} onChange = {(e) => handleInputChange(e)} id="firstName" placeholder="First Name"/>
                 </div>
                 <div>
                     <label className="deliform__label" htmlFor="lastName">Last Name </label>
@@ -59,7 +59,7 @@ function DeliveryForm() {
 
                 <div>
                     <label htmlFor="address">Street Address</label>
-                    <input  type="text" id="address"  value={address} onChange = {(e) => handleInputChange(e)} placeholder="Enter Your Address" />
+                    <input  type="text" name="" id="address"  value={address} onChange = {(e) => handleInputChange(e)} placeholder="Enter Your Address" />
                 </div>
                 <div>
                     <label className="sellform__label" htmlFor="region">State/Region </label>

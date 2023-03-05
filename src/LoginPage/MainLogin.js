@@ -6,6 +6,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { Navigate, useNavigate } from "react-router-dom";
 import { login } from "../redux/auth";
 import { clearMessage } from "../redux/message";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function MainLogin() {
     let navigate = useNavigate();
@@ -29,18 +31,17 @@ function MainLogin() {
 
 
     const handleSubmit  = () => {
-       // console.log(email,password);
-       setSuccessful(false);
-
+        setSuccessful(false);
+        
         dispatch(login({ email, password }))
         .unwrap()
         .then(() => {
-            navigate("/AccountSeller");
-            window.location.reload();
+            navigate("/");
         })
         .catch(() => {
             setSuccessful(false);
         });
+        toast("Login Successful")
     }
 
     useEffect(() => {
@@ -49,7 +50,7 @@ function MainLogin() {
 
 
     if (isLoggedIn) {
-        return <Navigate to="/AccountSeller" />;
+        return <Navigate to="/AccountLogin" />;
     }
 
     return(
@@ -67,6 +68,7 @@ function MainLogin() {
                     <button onClick={()=>handleSubmit()} type="submit">
                         Sign In
                     </button>
+                    <ToastContainer />
                 </Link>
             </div>
 

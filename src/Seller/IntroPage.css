@@ -5,6 +5,7 @@
     background: #ffffff;
     position: relative;
     top: 170px;
+    margin-bottom: -350px;
 }
 
 @media screen and (max-width: 960px) {

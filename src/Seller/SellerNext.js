@@ -131,7 +131,7 @@ function ProductsCarousel (props) {
           {data?.map((product) => {
             return (
               <div key={product.id}>
-                <button className=''>{product.condition}</button>
+                    <button className='cardbtn'>{product.condition}</button>
                 <div className="img">
                   <img src={`https://admin.juciparo.com${product.photo}`} alt="placeholder"  /> 
                 </div>
