@@ -43,7 +43,7 @@
     font-family: 'Lato';
     font-style: normal;
     font-weight: 500;
-    font-size: 10px;
+    font-size: 15px;
     line-height: 12px;
     color: #8C8C8C;
     padding-left: 20px;
@@ -52,17 +52,13 @@
 
 .form-body > button {
     position: relative;
-    width: 509px;
-    height: 59.79px;
+    width: 85%;
+    height: 100%;
+    text-align: center;
+    color: #FDFDFD;
     background: #EF0000;
     border: 1px solid #EF0000;
-    border-radius: 5px;
-    font-family: 'Lato';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 15px;
-    line-height: 18px;
-    color: #FDFDFD;
+    cursor: pointer;
 }
 
 

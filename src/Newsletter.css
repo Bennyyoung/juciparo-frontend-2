@@ -5,6 +5,7 @@
     background: var(--secondary200);
     display: grid;
     place-items: center; /* cool stuff */
+    margin-top: 13em;
 }
 
 .newsletter__text {

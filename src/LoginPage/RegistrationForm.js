@@ -4,6 +4,8 @@ import "./RegistrationForm.css"
 import { useDispatch, useSelector } from "react-redux";
 import { register } from "../redux/auth";
 import { clearMessage } from "../redux/message";
+import { ToastContainer, toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 
 function RegistrationForm() {
@@ -44,7 +46,6 @@ function RegistrationForm() {
     }
 
     const handleSubmit  = () => {
-        //console.log(firstname, lastname, email, phone, password);
         setSuccessful(false);
 
         dispatch(register({firstname, lastname, email, phone, password }))
@@ -52,11 +53,11 @@ function RegistrationForm() {
         .then(() => {
             setSuccessful(true);
             navigate("/AccountLogin");
-            window.location.reload();
         })
         .catch(() => {
             setSuccessful(false);
         });
+        toast("Registration Successful");
     }
 
 
@@ -84,6 +85,7 @@ function RegistrationForm() {
                     <input className="form__input" type="password"  id="password" value={password} onChange = {(e) => handleInputChange(e)} placeholder="Password"/>
                 </div>
                 <button onClick={()=>handleSubmit()} type="submit">Create An Account</button>
+                <ToastContainer />
             </div>
 
             <div className='terms'>
