@@ -304,7 +304,7 @@ ul.slick-dots {
 }
 @media screen and (max-width: 960px) {
     .recommends-carousel-container { 
-        left: 1%;
+        /* left: 1%; */
     }
     .recommends-carousel-wrapper > .slick-slider.slick-initialized > .slick-list > .slick-track {
         width: 1150px!important;
@@ -315,6 +315,7 @@ ul.slick-dots {
     .recommends-carousel-wrapper > 
     .wrappers-text h4 {
         font-size: 18px;
+        margin-left: 30px;
     }
     .recommends-carousel-wrapper > 
     .wrappers-text h5 {

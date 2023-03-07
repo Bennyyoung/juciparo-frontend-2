@@ -121,10 +121,10 @@
         height: 400px!important;
     }
     div.discuss__card > h3 {
-        top: 230px;
+        top: 300px;
     }
     div.discuss__card > p {
-        top: 255px!important;
+        top: 320px!important;
         width: 100%;
     }
 }
