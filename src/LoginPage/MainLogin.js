@@ -28,20 +28,21 @@ function MainLogin() {
             setPassword(value);
         }
     };
-
-
+    
+    
     const handleSubmit  = () => {
         setSuccessful(false);
         
         dispatch(login({ email, password }))
         .unwrap()
-        .then(() => {
+        .then(response => {
+            toast.success("Login Successful")
             navigate("/");
         })
-        .catch(() => {
+        .catch(error => {
+            toast.error("Invalid email or password")
             setSuccessful(false);
         });
-        toast("Login Successful")
     }
 
     useEffect(() => {

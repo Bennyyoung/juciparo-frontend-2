@@ -79,6 +79,7 @@ button.newsletter__search:hover {
 /* RESPONSIVENESS  */
 @media screen and (max-width: 600px) {
     .newsletter {
+        /* margin-top: -4000px; */
         height: 300px;
     }
 

@@ -128,7 +128,7 @@ function Home() {
           <Brand />
 
         </div>
-        <Newsletter />
+            <Newsletter />
         <Footer />
       </div>
       

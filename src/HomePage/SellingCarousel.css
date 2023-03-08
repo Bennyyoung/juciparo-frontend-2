@@ -308,7 +308,8 @@ ul.slick-dots {
 }
 @media screen and (max-width: 960px) {
     .selling-carousel-container {
-        left: 1%;
+        /* left: 1%; */
+        margin-top: -540px;
     }
     .selling-carousel-wrapper > .slick-slider.slick-initialized > .slick-list > .slick-track {
         width: 1150px!important;

@@ -289,7 +289,7 @@ ul.slick-dots {
 }
 @media screen and (max-width: 960px) {
     .products-carousel-container {
-        left: 1%;
+        /* left: 1%; */
     }
     .products-carousel-wrapper >
     .slick-slider.slick-initialized > 
