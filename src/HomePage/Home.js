@@ -72,10 +72,10 @@ function Home() {
             show={3} 
             style={{ maxWidth: 1200, marginLeft: 'auto', marginRight: 'auto', marginTop: '15rem' }}
           >
-            {data?.map((product) => {
+            {data?.map((product, index) => {
             // console.log(product.slug)
               return (
-                <div>
+                <div key={index}>
                   <div className="img">
                     <img src={`https://admin.juciparo.com${product.photo}`} alt="placeholder"  /> 
                   </div>
@@ -98,9 +98,9 @@ function Home() {
               style={{ maxWidth: 1200, marginLeft: 'auto', marginRight: 'auto', marginTop: 64 }}
           >
             {
-                GadgetData.map((product) => {
+                GadgetData.map((product, index) => {
                   return (
-                    <div>
+                    <div key={index}>
                       <div className='gadget-right'>
                         <div className='gadget-text'>
                             <h5>{product.header}</h5>

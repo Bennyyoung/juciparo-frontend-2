@@ -48,7 +48,6 @@
     .home__container {
         z-index: 0;
         top: 100px;
-        min-height: 720vh;
     }
 
     .sticky__nav {
@@ -70,7 +69,6 @@
     .home__container {
         z-index: 0;
         top: 90px;
-        min-height: 760vh;
     }
 }
 

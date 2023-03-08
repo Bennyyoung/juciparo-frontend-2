@@ -28,7 +28,7 @@ const StarRating = () => {
 
   return (
     <div>
-        <div class="flex">
+        <div className="flex">
             {stars.map((_, index) => {
                 return (
                     <FaStar

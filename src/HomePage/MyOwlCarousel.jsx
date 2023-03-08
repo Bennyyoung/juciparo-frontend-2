@@ -32,9 +32,9 @@ function IndividualIntervalsExample() {
 
   return (
     <Carousel>
-      {data?.map((product) => {
+      {data?.map((product, index) => {
         return (
-          <Carousel.Item interval={1000}>
+          <Carousel.Item interval={1000} key={index}>
             <Carousel.Caption>
               <h3>{product.title}</h3>
               <p>{product.description}</p>

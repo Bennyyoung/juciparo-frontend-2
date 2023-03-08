@@ -2,16 +2,23 @@ import React from 'react'
 import "./AccountDropDown.css"
 import { Icon } from '@iconify/react';
 import { Link } from 'react-router-dom'
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { logout } from "./redux/auth"
 //import AccountLogin from './LoginPage/AccountLogin';
 
-function AccountDropDown() {
-    const [open, setOpen] = React.useState(false);
-    const { user: currentUser } = useSelector((state) => state.auth);
 
-    const handleOpen = () => {
-        setOpen(!open);
-    };
+function AccountDropDown() {
+  const dispatch = useDispatch()
+  const [open, setOpen] = React.useState(false);
+  const { user: currentUser } = useSelector((state) => state.auth);
+
+  const handleOpen = () => {
+    setOpen(!open);
+  };
+
+  const handleLogout = () => {
+    dispatch(logout())
+  }
 
 
   return (
@@ -19,30 +26,37 @@ function AccountDropDown() {
       <div onClick={handleOpen}>
         <Icon icon="teenyicons:user-outline" />
         <button >Account</button>
-        {open ? 
-          <div className='dropdown__list'>
-              <Link to="/AccountLogin">Sign In</Link>
-              <Link to="/CreateAccount">Create an account</Link>
-              {/* {currentUser 
-              ? ( 
-              */}
-                <Link to={"/AccountSeller"}>
-                    <Icon icon="teenyicons:user-outline" />
-                    Saved Items
-                </Link>
-              {/* 
-              )
-              :
-                <div></div>
-              } 
-              */}
-          </div> 
-          
-          : 
+        {open ?
+
+
+          <>
+            {
+              currentUser ? (
+                <div className='dropdown__list2'>
+
+                  <Link onClick={() => handleLogout()}>
+                    Logout
+                  </Link>
+                </div>
+              ) :
+                (
+                  <div className='dropdown__list'>
+                    <Link to="/AccountLogin">Sign In</Link>
+                    <Link to="/CreateAccount">Create an account</Link>
+                    <Link to={"/AccountSeller"}>
+                      <Icon icon="teenyicons:user-outline" />
+                      Saved Items
+                    </Link>
+                  </div>
+                )
+            }
+          </>
+
+          :
           <div></div>
         }
       </div>
-      
+
     </div>
   )
 }

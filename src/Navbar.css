@@ -215,8 +215,9 @@ button.nav__search {
     height: 54px;
     background: var(--tertiary300);
     border-radius: 0px 5px 5px 0px;
-    padding: 25px 20px;
+    padding: 5px 20px;
     border-color: var(--tertiary300);
+    
 }
 
 button.nav__search:hover {

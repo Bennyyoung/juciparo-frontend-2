@@ -12,28 +12,28 @@ import gridH from "../Images/nivea.jpg"
 function Brand() {
   return (
     <div className='brand'>
-        <div class="grid-item">
+        <div className="grid-item">
             <img src={gridA} alt='a'/>
         </div>
-        <div class="grid-item">
+        <div className="grid-item">
             <img src={gridB} alt='a'/>
         </div>
-        <div class="grid-item">
+        <div className="grid-item">
             <img src={gridC} alt='a'/>
         </div>
-        <div class="grid-item">
+        <div className="grid-item">
             <img src={gridD} alt='a'/>
         </div>
-        <div class="grid-item">
+        <div className="grid-item">
             <img src={gridE} alt='a'/>
         </div>
-        <div class="grid-item">
+        <div className="grid-item">
             <img src={gridF} alt='a'/>
         </div>
-        <div class="grid-item">
+        <div className="grid-item">
             <img src={gridG} alt='a'/>
         </div>
-        <div class="grid-item">
+        <div className="grid-item">
             <img src={gridH} alt='a'/>
         </div>
         
