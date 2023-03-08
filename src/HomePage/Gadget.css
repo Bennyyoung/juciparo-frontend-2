@@ -274,7 +274,7 @@
     .gadget-carousel-container {
         width: 80%;
         left: 10%;
-        height: 205vh!important;
+        /* height: 205vh!important; */
     }
     .gadget-carousel-content> div {
         width: 100%;

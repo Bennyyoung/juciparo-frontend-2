@@ -314,10 +314,6 @@ ul.slick-dots {
     .wrappers-text h4 {
         font-size: 18px;
     }
-    .products-carousel-wrapper > 
-    .wrappers-text h5 {
-        display: none;
-    }
     .seller-carousel-wrapper >
     .slick-slider.slick-initialized > 
     .slick-list > .slick-track {

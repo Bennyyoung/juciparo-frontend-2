@@ -17,18 +17,17 @@
     flex-direction: column;
 }
 
-.discuss__card > img {
-    position: absolute;
+.discuss__card>img {
     width: 100%;
     height: 358px;
 }
 
-.discuss__card > h3 {
+.discuss__card>h3 {
     position: absolute;
     width: 303px;
     height: 31px;
     top: 384px;
-    font-family: 'Montserrat' sans-serif;
+    font-family: 'Montserrat'sans-serif;
     font-style: normal;
     font-weight: 700;
     font-size: 18px;
@@ -36,12 +35,12 @@
     color: #000000;
 }
 
-.discuss__card > p {
+.discuss__card>p {
     position: absolute;
     width: 238px;
     height: 25px;
     top: 410px;
-    font-family: 'Montserrat' sans-serif;
+    font-family: 'Montserrat'sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 15px;
@@ -54,15 +53,15 @@
 
 
 /* RESPONSIVENESS  */
-@media only screen and (min-width: 1400px)  {
+@media only screen and (min-width: 1400px) {
     .discuss__container {
         width: 87%;
         gap: 50px;
     }
 }
 
-@media only screen and (max-width: 1200px)  {
-    
+@media only screen and (max-width: 1200px) {
+
     div.discuss__card {
         width: 90%;
     }
@@ -73,11 +72,13 @@
         margin-bottom: 10%;
         height: 540px;
     }
-    div.discuss__card > h3 {
+
+    div.discuss__card>h3 {
         width: 100%;
         height: 50px;
     }
-    div.discuss__card > p {
+
+    div.discuss__card>p {
         width: 100%;
         top: 430px;
     }
@@ -97,14 +98,16 @@
         height: 400px;
     }
 
-    div.discuss__card > img {
+    div.discuss__card>img {
         height: 70%;
     }
 
-    div.discuss__card > h3 {
+    div.discuss__card> div > h3 {
+        font-weight: bold;
         top: 250px;
     }
-    div.discuss__card > p {
+
+    div.discuss__card> div > p {
         top: 275px;
         width: 100%;
     }
@@ -114,17 +117,21 @@
     .discuss__container {
         margin-top: 20%;
         align-items: center;
-        min-height: 150vh!important;
+        min-height: 150vh !important;
     }
+
     div.discuss__card {
         width: 90%;
-        height: 400px!important;
+        height: 400px !important;
     }
-    div.discuss__card > h3 {
+
+    div.discuss__card> div > h3 {
+        font-weight: bold;
         top: 300px;
     }
-    div.discuss__card > p {
-        top: 320px!important;
+
+    div.discuss__card> div > p {
+        top: 320px !important;
         width: 100%;
     }
 }
@@ -133,18 +140,29 @@
     .discuss__container {
         margin-top: 20%;
         align-items: center;
-        min-height: 150vh!important;
+        min-height: 150vh !important;
     }
+
     div.discuss__card {
         width: 90%;
-        height: 400px!important;
+        height: 400px !important;
+        
     }
-    div.discuss__card > h3 {
+    div.discuss__card > div {
+        width: 90%;
+        height: 400px !important;
+        margin-top: 1rem
+
+    }
+
+    div.discuss__card> div > h3 {
+        font-weight: bold;
         top: 215px;
         font-size: 15px;
     }
-    div.discuss__card > p {
-        top: 240px!important;
+
+    div.discuss__card> div > p {
+        top: 240px !important;
         width: 100%;
         font-size: 15px;
     }

@@ -64,15 +64,15 @@ function Sidebar() {
     <div className='sidebar'>
       {SidebarData.map((item, index) => {
         return (
-          <>
+          <div key={index}>
             <div className={index ? 'menuItem active' : 'menuItem'}
-              key={index}
+              
               onClick={onClick}
             >
               <Icon icon={item.icon} />
               {
-                data.filter(el => el.slug === item.slug).map(el => (
-                  <Link to={`/CategoriesProd/${el.slug}`}>
+                data.filter(el => el.slug === item.slug).map((el, index) => (
+                  <Link to={`/CategoriesProd/${el.slug}`} key={index}>
                     {item.title}
                   </Link>
                 ))
@@ -130,7 +130,7 @@ function Sidebar() {
           )
           : null
         } */}
-          </>
+          </div>
         )
       })}
     </div>

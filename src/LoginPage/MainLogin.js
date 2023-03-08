@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import "./MainLogin.css"
 import { Icon } from '@iconify/react';
@@ -11,62 +11,60 @@ import 'react-toastify/dist/ReactToastify.css';
 
 function MainLogin() {
     let navigate = useNavigate();
-    const [email, setEmail] = useState(null);
-    const [password, setPassword] = useState(null);
-    const { isLoggedIn } = useSelector((state) => state.auth);
+
+    const [formData, setFormData] = useState({
+        email: "",
+        password: ""
+    })
+    // const { isLoggedIn } = useSelector((state) => state.auth);
     const { message } = useSelector((state) => state.message);
     const [successful, setSuccessful] = useState(false);
 
     const dispatch = useDispatch();
 
     const handleInputChange = (e) => {
-        const {id , value} = e.target;
-        if(id === "email"){
-            setEmail(value);
-        }
-        if(id === "password"){
-            setPassword(value);
-        }
+        e.preventDefault()
+        const { name, value } = e.target
+        setFormData({
+            ...formData,
+            [name]: value.trimStart()
+        })
     };
-    
-    
-    const handleSubmit  = () => {
-        setSuccessful(false);
-        
-        dispatch(login({ email, password }))
-        .unwrap()
-        .then(response => {
+
+
+    const handleSubmit = (e) => {
+        // setSuccessful(false);
+        e.preventDefault()
+        const { email, password } = formData
+
+        try {
+            dispatch(login({ email, password }))
             toast.success("Login Successful")
             navigate("/");
-        })
-        .catch(error => {
+        } catch (err) {
             toast.error("Invalid email or password")
-            setSuccessful(false);
-        });
+        }
+
     }
 
     useEffect(() => {
         dispatch(clearMessage());
-    }, [dispatch]);
+    }, []);
 
 
-    if (isLoggedIn) {
-        return <Navigate to="/AccountLogin" />;
-    }
-
-    return(
+    return (
         <div className="mainform">
             <div className="mainform-body">
                 <div>
-                    <label className="mainform__label" for="email">Email Address or Phone Number</label>
-                    <input className="mainform__input"  type="email/phone" id="email"  value={email} onChange = {(e) => handleInputChange(e)} placeholder="Email Address or Phone Number"/>
+                    <label className="mainform__label" htmlFor="email">Email Address or Phone Number</label>
+                    <input className="mainform__input" type="email/phone" id="email" name="email" value={formData.email} onChange={(e) => handleInputChange(e)} placeholder="Email Address or Phone Number" />
                 </div>
                 <div>
-                    <label className="mainform__label" for="password">Password </label>
-                    <input className="mainform__input" type="password"  id="password" value={password} onChange = {(e) => handleInputChange(e)} placeholder="Password"/>
+                    <label className="mainform__label" htmlFor="password">Password </label>
+                    <input className="mainform__input" type="password" id="password" name="password" value={formData.password} onChange={(e) => handleInputChange(e)} placeholder="Password" />
                 </div>
                 <Link>
-                    <button onClick={()=>handleSubmit()} type="submit">
+                    <button onClick={(e) => handleSubmit(e)} type="submit">
                         Sign In
                     </button>
                     <ToastContainer />
@@ -74,9 +72,9 @@ function MainLogin() {
             </div>
 
             {message && (
-                <div className="orm-body">
+                <div className="form-body">
                     <div className={successful ? "alert alert-success" : "alert alert-danger"}
-                     role="alert"
+                        role="alert"
                     >
                         {message}
                     </div>
@@ -96,12 +94,12 @@ function MainLogin() {
                     <Icon icon="akar-icons:google-fill" />
                     Continue with Google
                 </Link>
-                <h5>Don't have an account ? 
+                <h5>Don't have an account ?
                     <Link to="/CreateAccount">Sign Up</Link>
                 </h5>
             </div>
         </div>
-    )       
+    )
 }
 
 export default MainLogin

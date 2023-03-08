@@ -28,7 +28,7 @@
     }
 }
 
-@media only screen and (max-width: 1200px)  {
+@media only screen and (max-width: 1200px) {
     .brand {
         width: 90%;
         left: 1%;
@@ -37,17 +37,19 @@
 
 @media screen and (max-width: 960px) {
     .brand {
-        display: none;
+        display: grid;
+        gap: 30px 50px;
+        grid-template-columns: auto auto;
+        margin-top: 7rem
+    }
+    .grid-item {
+        height: 109px;
+        width: 135px;
     }
 
 
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 600px) {}
 
-}
-
-@media screen and (max-width: 479px) {
-
-}
-
+@media screen and (max-width: 479px) {}
