@@ -1,7 +1,6 @@
 .cartSummary {
     position: relative;
-
-
+    width: 597px;
     height: 280px;
     border-radius: 5px;
     right: 0px;
@@ -47,8 +46,6 @@
 
 .cartSummary__row > div {
     display: flex;
-    justify-content: space-between;
-    margin-bottom: 0px;
 }
 
 .cartSummary__row > div:nth-child(2) {
@@ -58,7 +55,6 @@
 
 .cartSummary__row > div:nth-child(2) > h5 {
     width: 90%;
-    height: 50px;
 }
 
 

@@ -12,7 +12,6 @@ import axios from "axios";
 
 function SampleNextArrow(props) {
   const { className, onClick } = props;
-  //console.log("next arrow");
   return (
     <div
       className={className}
@@ -24,7 +23,6 @@ function SampleNextArrow(props) {
 }
 function SamplePrevArrow(props) {
   const { className,  onClick } = props;
-  //console.log("left arrow");
   return (
     <div
       className={className}
@@ -45,14 +43,12 @@ function ProductsCarousel (props) {
   const getProducts = async () => {
     const response = await axios.get("https://admin.juciparo.com/api/v1/products")
     .then(function(response) {
-      console.log(response?.data?.data)
       setData(response?.data?.data)
     })
     //https://fakestoreapi.com/products?limit=5
     if (componentMounted) {
       setData(await response.clone().json());
       setFilter(await response.json());
-      //console.log(filter);
     }
   };
 
@@ -136,7 +132,7 @@ function ProductsCarousel (props) {
                   <img src={`https://admin.juciparo.com${product.photo}`} alt="placeholder"  /> 
                 </div>
                 <div className='products-text'>
-                  <Link to={"/productDetails/" + product.id} onClick={() => navigate(product.route)}>
+                  <Link to={"/product/" + product.id} onClick={() => navigate(product.route)}>
                     {product.title}
                   </Link>
                   <div>

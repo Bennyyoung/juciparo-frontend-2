@@ -1,5 +1,5 @@
 .contact {
-    min-height: 150vh;
+    min-height: 60vh;
     width: 80%;
     position: relative;
     left: 9%;
@@ -9,7 +9,8 @@
     align-items: center;
     top: 150px;
 }
-.contact > h2 {
+
+.contact>h2 {
     position: relative;
     width: 173px;
     height: 42px;
@@ -22,7 +23,7 @@
     top: 30px;
 }
 
-.contact > div {
+.contact>div {
     height: 60%;
     width: 100%;
     position: relative;
@@ -33,7 +34,7 @@
     align-items: center;
 }
 
-.contact > div > img {
+.contact>div>img {
     width: 45%;
     height: 317px;
     background: #F4F4F4;
@@ -45,7 +46,7 @@
     height: 150px;
 }
 
-.details > h2 {
+.details>h2 {
     width: 251px;
     height: 42px;
     font-family: 'Lato';
@@ -56,7 +57,7 @@
     color: #000000;
 }
 
-.details > h4 {
+.details>h4 {
     width: 317px;
     height: 60px;
     font-family: 'Lato';
@@ -71,16 +72,16 @@
 /* RESPONSIVENESS  */
 @media screen and (max-width: 960px) {
     .contact {
-        min-height: 160vh;
         top: 120px;
     }
-    .contact > div {
+
+    .contact>div {
         top: 100px;
         height: 100%;
         flex-direction: column;
     }
 
-    .contact > div > img {
+    .contact>div>img {
         width: 70%;
     }
 
@@ -92,27 +93,28 @@
         flex-direction: column;
     }
 
-    .details > h2 {
+    .details>h2 {
         width: 100%;
         text-align: center;
     }
-    .details > h4 {
+
+    .details>h4 {
         width: 80%;
     }
 }
 
 @media screen and (max-width: 600px) {
-    .contact > div > img {
+    .contact>div>img {
         width: 90%;
     }
 }
 
 @media screen and (max-width: 479px) {
     .contact {
-        min-height: 120vh;
         top: 80px;
     }
-    .contact > div > img {
+
+    .contact>div>img {
         height: 25%;
         width: 100%;
     }
@@ -120,16 +122,18 @@
 
 @media screen and (max-width: 479px) {
     .details {
-        height: 160px!important;
+        height: 160px !important;
         width: 85%;
         position: relative;
         top: -50px;
     }
-    .details > h2 {
+
+    .details>h2 {
         font-size: 30px;
         color: white;
     }
-    .details > h4 {
+
+    .details>h4 {
         font-size: 18px;
         width: 100%;
         text-align: center;
@@ -138,4 +142,3 @@
         position: relative;
     }
 }
-

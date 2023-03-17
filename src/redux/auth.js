@@ -1,16 +1,22 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { setMessage } from "./message";
 import AuthService from "../services/auth.service";
+import { toast } from 'react-toastify';
+import { Navigate, useNavigate } from "react-router-dom";
+import { push } from "connected-react-router";
 
-const user = JSON.parse(localStorage.getItem("user"));
 
-//register
+const user = JSON.parse(localStorage.getItem("user")) ? JSON.parse(localStorage.getItem("user")) : null;
+
+// register
 export const register = createAsyncThunk(
   "auth/register",
-  async ({firstname, lastname, email, phone, password }, thunkAPI) => {
+  async ({ firstname, lastname, email, phone, password }, thunkAPI) => {
     try {
       const response = await AuthService.register(firstname, lastname, email, phone, password);
       thunkAPI.dispatch(setMessage(response.data.message));
+      toast.success("Login Successful")
+
       return response.data;
     } catch (error) {
       const message =
@@ -20,7 +26,57 @@ export const register = createAsyncThunk(
         error.message ||
         error.toString();
       thunkAPI.dispatch(setMessage(message));
+      toast.error(`${message}`)
       return thunkAPI.rejectWithValue();
+    }
+  }
+);
+
+// Vendor register
+export const vendorRegister = createAsyncThunk(
+  "auth/vendorRegister",
+  async ({ firstname,
+    lastname,
+    email,
+    phone,
+    password,
+    businessName,
+    state,
+    address,
+    referral,
+    category,
+    city,
+    subscription,
+    image }, thunkAPI) => {
+    try {
+      const formData = new FormData()
+      formData.append("image", image)
+      const response = await AuthService.vendorRegister(
+        firstname,
+        lastname,
+        email,
+        phone,
+        password,
+        businessName,
+        state,
+        address,
+        referral,
+        category,
+        city,
+        subscription,
+        image);
+      thunkAPI.dispatch(setMessage(response.data.message));
+      return response.data;
+      // thunkAPI.dispatch(push('/AccountLogin'))
+    } catch (error) {
+      const message =
+        (error.response &&
+          error.response.data &&
+          error.response.data.message) ||
+        error.message ||
+        error.toString();
+      thunkAPI.dispatch(setMessage(message));
+      // return thunkAPI.rejectWithValue();
     }
   }
 );
@@ -31,6 +87,9 @@ export const login = createAsyncThunk(
   async ({ email, password }, thunkAPI) => {
     try {
       const data = await AuthService.login(email, password);
+      toast.success("Login Successful")
+
+
       return { user: data };
     } catch (error) {
       const message =
@@ -40,10 +99,55 @@ export const login = createAsyncThunk(
         error.message ||
         error.toString();
       thunkAPI.dispatch(setMessage(message));
+      toast.error(`${message}`)
+
+
+
       return thunkAPI.rejectWithValue();
     }
   }
 );
+
+// checkout
+export const checkout = createAsyncThunk(
+  "auth/checkout",
+  async ({
+    first_name,
+    last_name,
+    email,
+    phone,
+    country,
+    address1,
+    address2,
+    postal_code
+  }, thunkAPI) => {
+    try {
+      const response = await AuthService.checkout(
+        first_name,
+        last_name,
+        email,
+        phone,
+        country,
+        address1,
+        address2,
+        postal_code);
+      thunkAPI.dispatch(setMessage(response.url));
+      toast.success(`${response.status}`)
+
+      return response.url
+    } catch (error) {
+      const message =
+        (error.response &&
+          error.response.data &&
+          error.response.data.message) ||
+        error.message ||
+        error.toString();
+      thunkAPI.dispatch(setMessage(message))
+      toast(`${message}`)
+      return thunkAPI.rejectWithValue();
+    }
+  }
+)
 
 //logout
 export const logout = createAsyncThunk("auth/logout", async () => {

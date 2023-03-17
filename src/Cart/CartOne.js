@@ -30,7 +30,7 @@ function CartOne() {
         <div className='cart__left'>
           <img src={`https://admin.juciparo.com${item?.photo}`} alt={item.title} />
           <h5>{item.title}</h5>
-          <div>{console.log(item.title)}</div>
+          {/* <div>{item.title}</div> */}
         </div>
         <div className='cart__right'>
           <div>
@@ -52,13 +52,17 @@ function CartOne() {
             </div>
             {item.qty}
           </div>
-          <h4>#{item.price}</h4>
+          <h4>₦{(+item.price).toLocaleString("en-NG")}</h4>
           <button
                 onClick={() => {
                   removeItem(item);
                 }}
               >
-                <Icon icon="iconoir:cancel" />
+                <Icon 
+                  icon="iconoir:cancel" 
+                  width="25"
+                  height="25"
+                />
               </button>
           
         </div>

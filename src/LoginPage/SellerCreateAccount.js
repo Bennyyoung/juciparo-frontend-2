@@ -1,17 +1,16 @@
 import React from 'react'
 import "./SellerCreateAccount.css"
-import abc from "../Images/logoOne.jpg"
 import AccountHeader from './AccountHeader';
 import SellerRegister from './SellerRegister';
 
 function SellerCreateAccount() {
   return (
     <div className='sellerAccount'>
-        <AccountHeader
+        {/* <AccountHeader
             img ={abc}
             head = "Create Your Seller Account"
             headFive = "STEP 1"
-        />
+        /> */}
         <SellerRegister />
     </div>
   )

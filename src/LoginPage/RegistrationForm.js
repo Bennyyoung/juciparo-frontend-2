@@ -38,14 +38,15 @@ function RegistrationForm() {
         setSuccessful(false);
         const { firstname, lastname, email, phone, password } = formData
 
-        try {
+        if (firstname && lastname && email && phone && password) {
             dispatch(register({ firstname, lastname, email, phone, password }))
             setSuccessful(true);
             navigate("/AccountLogin");
-            toast("Registration Successful");
-        } catch (err) {
+
+        } else {
+            toast.error("Please enter all fields")
             setSuccessful(false);
-            toast("Registration Unsuccessful");
+
         }
     }
 
@@ -54,23 +55,23 @@ function RegistrationForm() {
         <div className="form">
             <div className="form-body">
                 <div>
-                    <label className="form__label" for="firstname">First Name </label>
+                    <label className="form__label" htmlFor="firstname">First Name </label>
                     <input className="form__input" type="text" name="firstname" value={formData.firstname} onChange={(e) => handleInputChange(e)} id="firstName" placeholder="First Name" />
                 </div>
                 <div>
-                    <label className="form__label" for="lastname">Last Name </label>
+                    <label className="form__label" htmlFor="lastname">Last Name </label>
                     <input type="text" id="lastName" name="lastname" value={formData.lastname} className="form__input" onChange={(e) => handleInputChange(e)} placeholder="last Name" />
                 </div>
                 <div>
-                    <label className="form__label" for="email">Email Address</label>
+                    <label className="form__label" htmlFor="email">Email Address</label>
                     <input type="email" id="email" className="form__input" name="email" value={formData.email} onChange={(e) => handleInputChange(e)} placeholder="Email" />
                 </div>
                 <div>
-                    <label className="form__label" for="phone">Phone Number </label>
+                    <label className="form__label" htmlFor="phone">Phone Number </label>
                     <input type="text" id="phone" className="form__input" name="phone" value={formData.phone} onChange={(e) => handleInputChange(e)} placeholder="Phone Number" />
                 </div>
                 <div>
-                    <label className="form__label" for="password">Password </label>
+                    <label className="form__label" htmlFor="password">Password </label>
                     <input className="form__input" type="password" id="password" name="password" value={formData.password} onChange={(e) => handleInputChange(e)} placeholder="Password" />
                 </div>
                 <button onClick={(e) => handleSubmit(e)} type="submit">Create An Account</button>
@@ -78,11 +79,11 @@ function RegistrationForm() {
 
             <div className='terms'>
                 <h5>By signing Up you accept our
-                    <Link to="/Terms">terms and conditions & privacy policy</Link>
+                    <Link to="/Terms" style={{ paddingLeft: '2px' }}>terms and conditions & privacy policy</Link>
                 </h5>
                 <div className='div'>
-                    <p>ALready have an Account ?</p>
-                    <Link to="/AccountLogin" >Sign In</Link>
+                    <p>Already have an Account ?</p>
+                    <Link to="/account-login" >Sign In</Link>
                 </div>
             </div>
         </div>

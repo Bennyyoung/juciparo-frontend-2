@@ -29,10 +29,12 @@ import ContactUs from './Help/ContactUs';
 import Terms from './Help/Terms';
 import PlaceOrder from "./Help/PlaceOrder"
 import SavedItem from './Seller/SavedItem';
-import Category from './category/Category';
+import ProductGrid from './category/ProductGrid';
 import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 
+
+const user = localStorage.getItem("user")
 
 
 function App() {
@@ -44,34 +46,33 @@ function App() {
         <ScrollToTop>
           <Routes>
             <Route path='/' exact element={<Home />} />
-            <Route path='CategoriesProd/:test' element={<CategoriesProd />} />
-            <Route path='productDetails/:id' element={<ProductsDetails />} />
+            <Route path='/categories-product/:test' element={<CategoriesProd />} />
+            <Route path='/product/:id' element={<ProductsDetails />} />
 
-            <Route path='AccountLogin/' element={<AccountLogin />} />
-            <Route path='CreateAccount/' element={<CreateAccount />} />
-            <Route path='AddressBook/' element={<AddressBook />} />
-            <Route path='AccountManagement/' element={<AccountManagement />} />
+            <Route path='/account-login/' element={<AccountLogin />} />
+            <Route path='/create-account/' element={<CreateAccount />} />
+            <Route path='/address-book/' element={<AddressBook />} />
+            <Route path='/account-management/' element={<AccountManagement />} />
 
-            <Route path='SellerProfile/' element={<SellerProfile />} />
-            <Route path='IntroPage/' element={<IntroPage />} />
-            <Route path='SellerCreate/' element={<SellerCreateAccount />} />
-            <Route path='SellerCreateTwo/' element={<SellerCreateTwo />} />
-            <Route path='AccountSeller/' element={<AccountSeller />} />
+            <Route path='/seller-profile/' element={<SellerProfile />} />
+            <Route path='/intro-page/' element={<IntroPage />} />
+            <Route path='/seller-create/' element={<SellerCreateAccount />} />
+            <Route path='/seller-create-two/' element={<SellerCreateTwo />} />
+            <Route path='/account-seller/' element={<AccountSeller />} />
 
-            <Route path='Cart/:id' element={<Cart />} />
-            <Route path='CheckoutOne/' element={<CheckoutOne />} />
-            <Route path='DeliveryMethod/' exact element={<DeliveryMethod />} />
-            <Route path='PaymentMethod/' exact element={<PaymentMethod />} />
+            <Route path='/cart/:id' element={<Cart />} />
+            <Route path='/checkout-one/' element={<CheckoutOne />} />
+            <Route path='/delivery-method/' exact element={<DeliveryMethod />} />
 
-            <Route path='AboutUs/' element={<AboutUs />} />
-            <Route path='Help/' element={<Help />} />
-            <Route path='Privacy/' exact element={<Privacy />} />
-            <Route path='Track/' exact element={<Track />} />
-            <Route path='ContactUs/' exact element={<ContactUs />} />
-            <Route path='Terms/' exact element={<Terms />} />
-            <Route path='PlaceOrder/' exact element={<PlaceOrder />} />
+            <Route path='/about-us/' element={<AboutUs />} />
+            <Route path='/help/' element={<Help />} />
+            <Route path='/privacy/' exact element={<Privacy />} />
+            <Route path='/track/' exact element={<Track />} />
+            <Route path='/contact-us/' exact element={<ContactUs />} />
+            <Route path='/terms/' exact element={<Terms />} />
+            <Route path='/place-order/' exact element={<PlaceOrder />} />
 
-            <Route path='category/' exact element={<Category />} />
+            <Route path='/category/' exact element={<ProductGrid />} />
           </Routes>
         </ScrollToTop>
       </Router>

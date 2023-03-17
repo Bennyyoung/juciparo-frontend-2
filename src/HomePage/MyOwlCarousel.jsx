@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import "./MyOwlCarousel.css"
 import Carousel from 'react-bootstrap/Carousel';
 import axios from 'axios';
+import { toast } from "react-toastify"
 
 function IndividualIntervalsExample() {
   const [data, setData] = useState([]);
@@ -10,15 +11,21 @@ function IndividualIntervalsExample() {
   let componentMounted = true;
 
   const getProducts = async () => {
-    const response = await axios.get("https://admin.juciparo.com/api/v1")
-    .then(function(response) {
-      //console.log(response?.data?.data?.banners)
-      setData(response?.data?.data?.banners)
-    })
-    if (componentMounted) {
-      setData(await response.clone().json());
-      setFilter(await response.json());
+    try{
+      const response = await axios.get("https://admin.juciparo.com/api/v1")
+      if(componentMounted) {
+        setData(response?.data?.data?.banners)
+      }
+    } catch(err) {
+      toast(err)
     }
+    // .then(function(response) {
+    //   setData(response?.data?.data?.banners)
+    // })
+    // if (componentMounted) {
+    //   setData(await response.clone().json());
+    //   setFilter(await response.json());
+    // }
   };
 
   useEffect(() => {

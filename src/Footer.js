@@ -22,18 +22,18 @@ function Footer() {
           <Link to="/Help">Help</Link>
           <Link to="/Privacy">Privacy Policy</Link>
           <Link to="/Help">FAQs</Link>
-          <Link to="/ContactUs">Contact Us</Link>
+          <Link to="//contact-us">Contact Us</Link>
         </ul>
         <ul>
           <Link to="/Store">Store</Link>
           <Link to="/">Top Products</Link>
           <Link to="/">Official Store</Link>
-          <Link to="/IntroPage">Become a seller</Link>
+          <Link to="/intro-page">Become a seller</Link>
         </ul>
         <ul>
           <Link to="/Support">Support</Link>
-          <Link to="/AboutUs">About Us</Link>
-          <Link to="/PlaceOrder">How To Place Order</Link>
+          <Link to="/about-us">About Us</Link>
+          <Link to="/place-order">How To Place Order</Link>
           <Link to="/Terms">Terms and Condition</Link>
         </ul>
       </div>

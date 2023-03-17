@@ -9,7 +9,7 @@ function Sell() {
       <div>
         <h4>Start</h4>
         <p>Selling Today</p>
-        <Link to="/SellerCreate">
+        <Link to="/seller-create">
             Get Started
         </Link>
       </div>

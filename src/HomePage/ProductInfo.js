@@ -2,140 +2,198 @@ import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import "./ProductInfo.css"
 import { Icon } from '@iconify/react';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useParams, useNavigate } from 'react-router-dom';
 import { addCart, delCart } from "../redux/action";
 import axios from "axios";
 import SelectLabels from "./sizeButton";
-
-
-const handleClick = (event, key) => {
-  console.log(event.target);
-  console.log('key index: ', key);
-};
+import { toast } from "react-toastify"
 
 function ProductInfo() {
   const { id } = useParams();
+  const [count, setCount] = useState(1)
   const [product, setProduct] = useState([]);
   const [cart, setCart] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true)
+  const navigate = useNavigate();
+
+
+
   const dispatch = useDispatch();
+
+
 
   const state = useSelector((state) => state.handleCart);
 
-  const addProduct = async () => {
-    setLoading(true);
-    const response = await axios.get(`https://admin.juciparo.com/api/v1/cart/add/${id}`)
-    .then(function() {
-        console.log(response?.message);
-        console.log(response?.status);
-        //setProduct(response?.data?.data);
-      })
+  const response = useSelector((state) => state.auth);
 
-    dispatch(addCart(product));
-    
+  const token = response?.user.authorisation?.access_token
+
+  const user = localStorage.getItem("user");
+
+  const addProduct = async (product) => {
+    setLoading(true);
+    const response = await axios.get(`https://admin.juciparo.com/api/v1/cart/add/${id}`, {
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
+    })
+
+    if (user === null) {
+      toast(`You must be logged in`)
+    } else {
+      toast(`${response?.data?.message}`)
+      setTimeout(() => {
+        dispatch(addCart(product));
+      }, 500)
+    }
   }
-  
-  const addItem = (product) => {
+
+  const addItem = (product, count) => {
+    setCount(prev => prev + 1)
     dispatch(addCart(product));
   };
   const removeItem = (product) => {
+    setCount(prev => prev - 1)
     dispatch(delCart(product));
   };
 
+
+
   const getProducts = async () => {
-    //console.log("ajhskahkahk")  
-    //console.log(id);
     const response = await axios.get(`https://admin.juciparo.com/api/v1/product/${id}`)
-    .then(function(response) {
-      //console.log(response?.data?.data);
-      console.log(response?.status);
-      setProduct(response?.data?.data);
-    })
+    const { data } = await response?.data
+    setProduct(data)
+    setIsLoading(false)
   };
   useEffect(() => {
     getProducts();
   }, [id]);
 
-   // console.log(product);
-
-
-
   return (
     <div className='productInfo__container'>
-      <h5>Product Information</h5>
-  
+      <div className="flex justify-end text-[#000000] text-[20px] font-[500]">Contact Seller</div>
       <div className='productInfo'>
-        <div className='prod_img' onClick={event => handleClick(event)}>
-            <img src={`https://admin.juciparo.com${product?.photo}`} alt={product.title} />
-        </div>    
+        <div className='prod_img'>
+          <img src={`https://admin.juciparo.com/${product?.photo}`} alt={product.title} />
+        </div>
         <div className='productInfo__right'>
-              <div className='prod__header'>
-                  <h3>{product?.title}</h3>
-                  <h5>{product?.stock}</h5>
+          <div className='prod__header'>
+            <h3>{product?.title}</h3>
+            <h5>{product?.stock > 0 ? 'In stock' : null}</h5>
+          </div>
+          <div className='prod__amount'>
+            {isLoading ? (
+              <div className="flex justify-center items-center">
+                <svg
+                  className="animate-spin h-5 w-5 mr-3 text-red-500"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                >
+                  <circle
+                    className="opacity-25"
+                    cx="12"
+                    cy="12"
+                    r="10"
+                    stroke="currentColor"
+                    strokeWidth="4"
+                  ></circle>
+                  <path
+                    className="opacity-75"
+                    fill="currentColor"
+                    d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm12 0a8 8 0 100-16 8 8 0 000 16zm-4 4a4 4 0 110-8 4 4 0 010 8z"
+                  ></path>
+                </svg>
               </div>
-              <div className='prod__amount'>
-                  <h4>{product?.price}</h4>
-                  <h5>{product?.discount}</h5>
+            ) : (
+              <h4>{`₦ ${(+product?.price).toLocaleString("en-NG")}`}</h4>
+            )}
+            {isLoading ? (
+              <div className="flex justify-center items-center">
+                <svg
+                  className="animate-spin h-5 w-5 mr-3 text-red-500"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                >
+                  <circle
+                    className="opacity-25"
+                    cx="12"
+                    cy="12"
+                    r="10"
+                    stroke="currentColor"
+                    strokeWidth="4"
+                  ></circle>
+                  <path
+                    className="opacity-75"
+                    fill="currentColor"
+                    d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm12 0a8 8 0 100-16 8 8 0 000 16zm-4 4a4 4 0 110-8 4 4 0 010 8z"
+                  ></path>
+                </svg>
               </div>
-              <div className='prod__colors'>
-                  <h5>Color</h5>
-                  <div className='colors'>
-                      <div></div>
-                      <div></div>
-                  </div>
-              </div>
-              <div className='prod__size'>
-                  <h5>Size</h5>
-                  <SelectLabels />
+            ) : (
+              <h5 className="line-through text-gray-500">{`₦ ${(+product?.discount).toLocaleString("en-NG")}`}</h5>
 
-              </div>
-              <div className='prod__menu'>
-              {cart.map((item) => {
-                return (
-                  <div>
-                    <div className='prod__menuIcon'>
-                      <button
-                        onClick={() => {
-                          addItem(item);
-                        }}
-                      >
-                        <Icon icon="ep:arrow-up" />
-                      </button>
-                      <button
-                        onClick={() => {
-                          removeItem(item.id);
-                        }}
-                      >
-                        <Icon icon="ep:arrow-down" />
-                      </button>
-                    </div>
-                    {item.qty}
-                  </div>
-              )})}
+            )}
 
-                  <button onClick={addProduct}>
-                    <Icon icon="ant-design:shopping-cart-outlined" />
-                    <Link to={"/Cart/" + product.slug}>
-                        Add to Cart
-                    </Link>
-                    
-                  </button>
-                  <div className='prod__menuWish'>
-                    <Icon icon="icon-park-outline:like" />
-                    <Link to="/wishList">WishList</Link>
-                  </div>
+          </div>
+          <div className='prod__colors'>
+            <h5>Color</h5>
+            <div className='colors'>
+              <div></div>
+              <div></div>
+            </div>
+          </div>
+          <div className='prod__size'>
+            <h5>Size</h5>
+            <SelectLabels />
+
+          </div>
+          <div className='prod__menu'>
+            <div>
+              <div className='prod__menuIcon'>
+                <button
+                  onClick={() => {
+                    addItem(product, count);
+                  }}
+                >
+                  <Icon icon="ep:arrow-up" />
+                </button>
+                <button
+                  onClick={() => {
+                    removeItem(product.id);
+                  }}
+                >
+                  <Icon icon="ep:arrow-down" />
+                </button>
               </div>
-              <div className='product__socialIcons'>
-                <h4>Share This Product</h4>
-                <div className='product__social'>
-                  <Icon icon="dashicons:facebook-alt" />
-                  <Icon icon="teenyicons:instagram-outline" />
-                  <Icon icon="brandico:twitter-bird" />
-                </div>
-              </div>
+              {count === 0 ? setCount(1) : count}
+            </div>
+
+            <button onClick={addProduct}>
+              <Icon icon="ant-design:shopping-cart-outlined" />
+              <Link to={"/cart/" + product?.slug}>
+                Add to Cart
+              </Link>
+
+            </button>
+            <div className='prod__menuWish'>
+              <Icon icon="icon-park-outline:like" />
+              <Link to="/wishList">Favourite</Link>
+            </div>
+          </div>
+          <div className='product__socialIcons'>
+            <h4>Share This Product</h4>
+            <div className='product__social'>
+              <Icon icon="dashicons:facebook-alt" />
+              <Icon icon="teenyicons:instagram-outline" />
+              <Icon icon="brandico:twitter-bird" />
+            </div>
+          </div>
         </div>
       </div>
-        
+
     </div>
   )
 }

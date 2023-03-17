@@ -18,7 +18,7 @@ function TabPanel(props) {
     >
       {value === index && (
         <Box sx={{ p: 3 }}>
-          <Typography>{children}</Typography>
+          <Box component="div">{children}</Box>
         </Box>
       )}
     </div>
@@ -38,7 +38,7 @@ function a11yProps(index) {
   };
 }
 
-export default function ProductDetailsTabs() {
+export default function ProductDetailsTabs({ product }) {
   const [value, setValue] = React.useState(0);
 
   const handleChange = (event, newValue) => {
@@ -49,32 +49,14 @@ export default function ProductDetailsTabs() {
     <Box sx={{ width: '100%' }}>
       <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
         <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
-          <Tab label="Product Details" {...a11yProps(0)} />
-          <Tab label="Description" {...a11yProps(1)} />
-          <Tab label="Payment Method" {...a11yProps(2)} />
-          <Tab label="Shipping & Return Policy" {...a11yProps(3)} />
-          <Tab label="Reviews" {...a11yProps(4)} />
+          <Tab label="Description" {...a11yProps(0)} />
+          <Tab label="Reviews" {...a11yProps(1)} />
         </Tabs>
       </Box>
       <TabPanel value={value} index={0}>
-        <ul>
-          <li>Processor: Intel Core i5-1135G7</li>
-          <li>Memory: 8GB DDR4</li>
-          <li>Storage: 512GB SSD</li>
-          <li>Display: 14″ FHD</li>
-          <li>Color: Black</li>
-        </ul>
+        <p dangerouslySetInnerHTML={{ __html: `${product.description}<br />` }}></p>
       </TabPanel>
       <TabPanel value={value} index={1}>
-        Item Two
-      </TabPanel>
-      <TabPanel value={value} index={2}>
-        Item Three
-      </TabPanel>
-      <TabPanel value={value} index={3}>
-        Item Four
-      </TabPanel>
-      <TabPanel value={value} index={4}>
         Item Five
       </TabPanel>
     </Box>
