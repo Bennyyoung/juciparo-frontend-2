@@ -13,7 +13,7 @@ import { useSelector } from "react-redux";
 function AccountSeller() {
     const { user: currentUser } = useSelector((state) => state.auth);
      if (!currentUser) {
-        return <Navigate to="/AccountLogin" />;
+        return <Navigate to="/account-login" />;
      }
     //firstname, lastname, email, phone, password
 

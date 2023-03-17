@@ -18,10 +18,7 @@ function Cart() {
       <Navbar />
       <div className='cart__section'>
         <div className='cart__container'>
-          <CartOne 
-            // productName = "HP LAPTOP: 12INCHES WITH 1TB AND 64BITS OS "
-            // productPrice = "100000"
-          />
+          <CartOne />
           <Summary 
             head = "Cart Summary"
             subTotal = "SubTotal"

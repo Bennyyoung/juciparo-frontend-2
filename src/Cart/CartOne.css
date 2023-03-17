@@ -2,7 +2,7 @@
     position: relative;
     width: 40%;
     /* min-height: 30vh; */
-    height: 30vh;
+    height: 209px;
     left: 0px;
     background: #F4F4F4;
     border-radius: 5px;
@@ -117,8 +117,6 @@
     right: 5%;
     width: 24px;
     height: 24px;
-    border-width: 1px;
-    border-color: black;
 }
 
 

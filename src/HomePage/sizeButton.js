@@ -16,7 +16,6 @@ export default function SelectLabels() {
   const getProducts = async () => {
     const response = await axios.get(`https://admin.juciparo.com/api/v1/product/${id}`)
     .then(function(response) {
-      //console.log(response?.data?.data);
       setProduct(response?.data?.data);
     })
     };
@@ -24,7 +23,6 @@ export default function SelectLabels() {
       getProducts();
     }, [id]);
 
-   // console.log(product);
 
  
   const handleChange = (event) => {

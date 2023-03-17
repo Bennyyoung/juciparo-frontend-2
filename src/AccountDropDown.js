@@ -1,61 +1,50 @@
 import React from 'react'
 import "./AccountDropDown.css"
 import { Icon } from '@iconify/react';
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux';
 import { logout } from "./redux/auth"
 //import AccountLogin from './LoginPage/AccountLogin';
-
+import Modal from "./Modal/Modal"
+import AccountDropDownModal from './AccountDropDown/AccountDropDownModal';
+import { toast } from "react-toastify"
 
 function AccountDropDown() {
   const dispatch = useDispatch()
   const [open, setOpen] = React.useState(false);
   const { user: currentUser } = useSelector((state) => state.auth);
 
+  const navigate = useNavigate();
+
   const handleOpen = () => {
     setOpen(!open);
   };
-
+  
   const handleLogout = () => {
     dispatch(logout())
+      .unwrap()
+      .then(() => {
+        navigate('/')
+      })
+      .catch((err) => {
+        toast(err)
+      })
+    }
+
+  const handleClose = () => {
+    setOpen(false)
   }
 
 
   return (
     <div className='dropdown_container'>
-      <div onClick={handleOpen}>
+      <div onClick={() => handleOpen()}>
         <Icon icon="teenyicons:user-outline" />
-        <button >Account</button>
-        {open ?
-
-
-          <>
-            {
-              currentUser ? (
-                <div className='dropdown__list2'>
-
-                  <Link onClick={() => handleLogout()}>
-                    Logout
-                  </Link>
-                </div>
-              ) :
-                (
-                  <div className='dropdown__list'>
-                    <Link to="/AccountLogin">Sign In</Link>
-                    <Link to="/CreateAccount">Create an account</Link>
-                    <Link to={"/AccountSeller"}>
-                      <Icon icon="teenyicons:user-outline" />
-                      Saved Items
-                    </Link>
-                  </div>
-                )
-            }
-          </>
-
-          :
-          <div></div>
-        }
+        <button>Account</button>
       </div>
+      {open ? <Modal showDiv={open} onClose={handleClose}>
+        <AccountDropDownModal currentUser={currentUser} handleLogout={handleLogout} />
+      </Modal> : null}
 
     </div>
   )

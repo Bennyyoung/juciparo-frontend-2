@@ -16,6 +16,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import ProductsCarousel from './ProductsCarousel'
 import axios from 'axios'
 import UserService from "../services/user.service";
+import { toast } from "react-toastify"
 
 function Home() {
   const navigate = useNavigate();
@@ -25,18 +26,18 @@ function Home() {
   let componentMounted = true;
 
   const getProducts = async () => {
-    const response = await axios.get("https://admin.juciparo.com/api/v1/categories")
-    .then(function(response) {
-      console.log(response?.data?.data);
-      setData(response?.data?.data)
-    })
-    //https://fakestoreapi.com/products?limit=5
-    if (componentMounted) {
-      setData(await response.clone().json());
-      setFilter(await response.json());
-      //console.log(filter);
+    try {
+      const response = await axios.get("https://admin.juciparo.com/api/v1/categories");
+      if (componentMounted) {
+        setData(response?.data?.data);
+        setFilter(response?.data?.data);
+      }
+    } catch (error) {
+      toast(error);
     }
   };
+
+
   useEffect(() => {
     getProducts();
   }, []);
@@ -61,77 +62,76 @@ function Home() {
       }
     );
   }, []);
-  console.log("data from home", data)
+
   return (
     <>
       <div className='chief__container'>
-        <Navbar /> 
+        <Navbar />
         <div className='home__container'>
           <Landing />
-          <FirstCarousel 
-            show={3} 
+          <FirstCarousel
+            show={3}
             style={{ maxWidth: 1200, marginLeft: 'auto', marginRight: 'auto', marginTop: '15rem' }}
           >
             {data?.map((product, index) => {
-            // console.log(product.slug)
               return (
                 <div key={index}>
                   <div className="img">
-                    <img src={`https://admin.juciparo.com${product.photo}`} alt="placeholder"  /> 
+                    <img src={`https://admin.juciparo.com${product.photo}`} alt="placeholder" />
                   </div>
                   <p
-                    onClick={() => navigate(`/CategoriesProd/${product.slug}`)}
+                    onClick={() => navigate(`/categories-product/${product.slug}`)}
                   >
                     {product.title}
                   </p>
                 </div>
               )
             })}
-            
+
           </FirstCarousel>
-        
-        
+
+
           <ProductsCarousel />
           <RecommendsCarousel />
           <Gadget
-              show={3} 
-              style={{ maxWidth: 1200, marginLeft: 'auto', marginRight: 'auto', marginTop: 64 }}
+            show={3}
+            style={{ maxWidth: 1200, marginLeft: 'auto', marginRight: 'auto', marginTop: 64 }}
           >
             {
-                GadgetData.map((product, index) => {
-                  return (
-                    <div key={index}>
-                      <div className='gadget-right'>
-                        <div className='gadget-text'>
-                            <h5>{product.header}</h5>
-                            <p>{product.para}</p>
-                        </div>
-                        <Link to="/productDetails" onClick={() => navigate(product.route)}>
-                  {/*     <Link onClick={handleDes}>  */}
-                          {product.btn}
-                        </Link>
+              GadgetData?.map((product, index) => {
+                return (
+                  <div key={index}>
+                    <div className='gadget-right'>
+                      <div className='gadget-text'>
+                        <h5>{product.header}</h5>
+                        <p>{product.para}</p>
                       </div>
-                      <div className="img">
-                        <img src={product.img} alt="placeholder"  /> 
-                      </div>
+                      <Link to="/productDetails" onClick={() => navigate(product.route)}>
+                        {/*     <Link onClick={handleDes}>  */}
+                        {product.btn}
+                      </Link>
                     </div>
-                  )
-                })
+                    <div className="img">
+                      <img src={product.img} alt="placeholder" />
+                    </div>
+                  </div>
+                )
+              })
             }
 
           </Gadget>
 
           <SellingCarousel />
-          
+
           <Discuss />
 
           <Brand />
 
         </div>
-            <Newsletter />
+        <Newsletter />
         <Footer />
       </div>
-      
+
     </>
   )
 }

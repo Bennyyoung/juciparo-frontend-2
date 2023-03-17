@@ -53,7 +53,7 @@
 .form-body > button {
     position: relative;
     width: 85%;
-    height: 100%;
+    padding: 1rem 0;
     text-align: center;
     color: #FDFDFD;
     background: #EF0000;

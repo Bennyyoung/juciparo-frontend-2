@@ -41,38 +41,37 @@ function AccountManReg() {
     }
 
     const handleSubmit  = () => {
-        console.log(firstName,lastName,email,password,newPassword,confirmPassword);
     }
 
     return(
         <div className="formMan">
             <div className="form-bodyMan">
                 <div>
-                    <label className="form__label" for="firstName">First Name </label>
+                    <label className="form__label" htmlFor="firstName">First Name </label>
                     <input className="form__input" type="text" value={firstName} onChange = {(e) => handleInputChange(e)} id="firstName" placeholder="First Name"/>
                 </div>
                 <div>
-                    <label className="form__label" for="lastName">Last Name </label>
+                    <label className="form__label" htmlFor="lastName">Last Name </label>
                     <input  type="text" name="" id="lastName" value={lastName}  className="form__input" onChange = {(e) => handleInputChange(e)} placeholder="LastName"/>
                 </div>
                 <div>
-                    <label className="form__label" for="email">Email Address</label>
+                    <label className="form__label" htmlFor="email">Email Address</label>
                     <input  type="email" id="email" className="form__input" value={email} onChange = {(e) => handleInputChange(e)} placeholder="Email"/>
                 </div>
                 <div>
-                    <label className="form__label" for="phone">Phone Number </label>
+                    <label className="form__label" htmlFor="phone">Phone Number </label>
                     <input  type="text" id="phone" className="form__input" value={phone} onChange = {(e) => handleInputChange(e)} placeholder="Phone Number"/>
                 </div>
                 <div>
-                    <label className="form__label" for="password">Current Password </label>
+                    <label className="form__label" htmlFor="password">Current Password </label>
                     <input className="form__input" type="password"  id="password" value={password} onChange = {(e) => handleInputChange(e)} placeholder="Password"/>
                 </div>
                 <div>
-                    <label className="form__label" for="password">New Password </label>
+                    <label className="form__label" htmlFor="password">New Password </label>
                     <input className="form__input" type="password"  id="newPassword" value={newPassword} onChange = {(e) => handleInputChange(e)} placeholder="New Password"/>
                 </div>
                 <div>
-                    <label className="form__label" for="password">Confirm Password </label>
+                    <label className="form__label" htmlFor="password">Confirm Password </label>
                     <input className="form__input" type="password"  id="confirmPassword" value={confirmPassword} onChange = {(e) => handleInputChange(e)} placeholder="Confirm Password"/>
                 </div>
                 <button onClick={()=>handleSubmit()} type="submit">Save Changes</button>

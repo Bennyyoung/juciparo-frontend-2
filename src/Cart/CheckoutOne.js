@@ -31,7 +31,7 @@ function CheckoutOne() {
           Modify Cart
         </Link>
       </div>
-      {/* <BasicTabs /> */}
+      <BasicTabs />
     </div>
   )
 }

@@ -93,17 +93,16 @@
 
 .prod__amount {
     position: absolute;
-    width: 31%;
     height: 24px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     top: 95px;
+    gap: 1rem;
     align-items: center;
 }
 
 .prod__amount > h4 {
-    width: 100px;
     height: 24px;
     font-family: 'Lato';
     font-style: normal;
@@ -121,7 +120,6 @@
     font-weight: 400;
     font-size: 15px;
     line-height: 18px;
-    color: #000000;
 }
 
 
@@ -152,11 +150,13 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    gap: 1rem;
 }
 
 .colors > div {
     width: 69px;
     height: 54px;
+    display: flex;
     background: #8C8C8C;
     border-radius: 5px;
 }

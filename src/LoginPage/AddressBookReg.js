@@ -37,34 +37,33 @@ function AddressBookReg() {
     }
 
     const handleSubmit  = () => {
-        console.log(firstName,lastName,address,region,city);
     }
 
     return(
         <div className="adformMan">
             <div className="adform-bodyMan">
                 <div>
-                    <label className="form__label" for="firstName">First Name </label>
+                    <label className="form__label" htmlFor="firstName">First Name </label>
                     <input className="form__input" type="text" value={firstName} onChange = {(e) => handleInputChange(e)} id="firstName" placeholder="First Name"/>
                 </div>
                 <div>
-                    <label className="form__label" for="lastName">Last Name </label>
+                    <label className="form__label" htmlFor="lastName">Last Name </label>
                     <input  type="text" name="" id="lastName" value={lastName}  className="form__input" onChange = {(e) => handleInputChange(e)} placeholder="LastName"/>
                 </div>
                 <div>
-                    <label className="form__label" for="phone">Phone Number </label>
+                    <label className="form__label" htmlFor="phone">Phone Number </label>
                     <input  type="text" id="phone" className="form__input" value={phone} onChange = {(e) => handleInputChange(e)} placeholder="Phone Number"/>
                 </div>
                 <div>
-                    <label className="form__label" for="address">Street Address </label>
+                    <label className="form__label" htmlFor="address">Street Address </label>
                     <input className="form__input" type="text"  id="address" value={address} onChange = {(e) => handleInputChange(e)} placeholder="Street name / Apartment No / Building / Floor"/>
                 </div>
                 <div>
-                    <label className="form__label" for="region">State/Region </label>
+                    <label className="form__label" htmlFor="region">State/Region </label>
                     <input className="form__input" type="text"  id="region" value={region} onChange = {(e) => handleInputChange(e)} placeholder="Region"/>
                 </div>
                 <div>
-                    <label className="form__label" for="city">City </label>
+                    <label className="form__label" htmlFor="city">City </label>
                     <input className="form__input" type="text"  id="city" value={city} onChange = {(e) => handleInputChange(e)} placeholder="City"/>
                 </div>
                 <button onClick={()=>handleSubmit()} type="submit">Save Changes</button>

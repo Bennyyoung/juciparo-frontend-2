@@ -12,7 +12,7 @@
 .menuItem {
     position: relative;
     align-items: center;
-    height: 38px;
+    height: 45px;
     transition: all 300ms ease-in-out;
     border-radius: 5px;   
     display: flex;
@@ -26,7 +26,8 @@
     cursor: pointer;
     background: var(--tertiary300);
     color: white;
-    height: 68px;
+    height: 45px;
+    margin: 5.5px 0px;
 }
 
 .menuItem > a:hover {

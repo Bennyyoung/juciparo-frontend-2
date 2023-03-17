@@ -24,7 +24,6 @@ function Sidebar() {
     const response = await axios.get("https://admin.juciparo.com/api/v1/categories")
       .then(
         function (response) {
-          console.log(response?.data?.data);
           setData(response?.data?.data);
         })
   };
@@ -37,17 +36,16 @@ function Sidebar() {
   const filterProducts = async () => {
     const response = await axios.get("https://admin.juciparo.com/api/v1/products")
       .then(function (response) {
-        console.log(response?.data?.data)
         setProducts(response?.data?.data)
       })
   };
+  
   useEffect(() => {
     filterProducts();
   }, []);
 
   const handleChange = (event) => {
     setSearchQuery(event.target.value);
-    console.log(searchQuery);
   }
 
   const handleClicked = () => {
@@ -58,78 +56,24 @@ function Sidebar() {
     setShowProductDiv(!showProductDiv);
   }
 
-  //const navigate = useNavigate();
-
   return (
     <div className='sidebar'>
-      {SidebarData.map((item, index) => {
+      {data.map((item, index) => {
         return (
           <div key={index}>
             <div className={index ? 'menuItem active' : 'menuItem'}
-              
+
               onClick={onClick}
             >
-              <Icon icon={item.icon} />
+              <Icon icon={item?.icon} />
               {
-                data.filter(el => el.slug === item.slug).map((el, index) => (
-                  <Link to={`/CategoriesProd/${el.slug}`} key={index}>
-                    {item.title}
+                data.filter(el => el.slug === item?.slug).map((el, index) => (
+                  <Link to={`/categories-product/${el.slug}`} key={index}>
+                    {item?.title}
                   </Link>
                 ))
               }
-              {/* {data.map((el) => {
-              
-              return (
-                <Link to={`/CategoriesProd/${el.slug}`}>
-                  {item.title}
-                </Link>
-              )
-            })} */}
             </div>
-            {/* {showDiv ? (
-            <div 
-              className='categoryList'
-            >
-              {
-                CategoryList.map((list, ind) => {
-                  return (
-                    <>
-                      <ul>
-                        <li>{list.headOne}</li>
-                        <li>{list.textOneA}</li>
-                        <li>{list.textOneB}</li>
-                        <li>{list.textOneC}</li>
-                        <li>{list.textOneD}</li>
-                      </ul>
-                      <ul>
-                        <li>{list.headTwo}</li>
-                        <li>{list.textTwoA}</li>
-                        <li>{list.textTwoB}</li>
-                        <li>{list.textTwoC}</li>
-                        <li>{list.textTwoD}</li>
-                      </ul>
-                      <ul>
-                        <li>{list.headThree}</li>
-                        <li>{list.textThreeA}</li>
-                        <li>{list.textThreeB}</li>
-                        <li>{list.textThreeC}</li>
-                        <li>{list.textThreeD}</li>
-                      </ul>
-                      <ul>
-                        <li>{list.headFour}</li>
-                        <li>{list.textFourA}</li>
-                        <li>{list.textFourB}</li>
-                        <li>{list.textFourC}</li>
-                        <li>{list.textFourD}</li>
-                      </ul>
-                    </>  
-                  )
-                })
-              }
-            </div>
-          )
-          : null
-        } */}
           </div>
         )
       })}

@@ -7,6 +7,9 @@ import AccountDropDown from './AccountDropDown';
 //import { SidebarData } from './Data/Data';
 import axios from 'axios';
 import { useSelector } from "react-redux";
+import Modal from "./Modal/Modal"
+import CategoryBar from "./CategoryBar/CategoryBar"
+
 
 function Navbar() {
   const [searchQuery, setSearchQuery] = useState('');
@@ -29,7 +32,6 @@ function Navbar() {
     const response = await axios.get("https://admin.juciparo.com/api/v1/categories")
       .then(
         function (response) {
-          console.log(response?.data?.data);
           setData(response?.data?.data);
         })
   };
@@ -42,7 +44,6 @@ function Navbar() {
   const filterProducts = async () => {
     const response = await axios.get("https://admin.juciparo.com/api/v1/products")
       .then(function (response) {
-        console.log(response?.data?.data)
         setProducts(response?.data?.data)
       })
   };
@@ -52,7 +53,6 @@ function Navbar() {
 
   const handleChange = (event) => {
     setSearchQuery(event.target.value);
-    console.log(searchQuery);
   }
 
   const handleClicked = () => {
@@ -64,6 +64,7 @@ function Navbar() {
   }
 
 
+  const class_style = 'ml-[5rem]'
 
 
   return (
@@ -76,10 +77,10 @@ function Navbar() {
               <img src={logo} alt='logo' />
             </Link>
             <div className='nav__links'>
-              <Link className='navLinkOne' to="/IntroPage">
+              <Link className='navLinkOne' to="/intro-page">
                 Sell An Item
               </Link>
-              <Link className='navLinkTwo' to="/AboutUs">
+              <Link className='navLinkTwo' to="/about-us">
                 About Us
               </Link>
             </div>
@@ -91,46 +92,30 @@ function Navbar() {
           </div>
 
           <div className='nav__bottom'>
-            <button onClick={onClick}>
+            <button onClick={() => onClick()}>
               Categories
             </button>
             {
-              showDiv ?
-                <div className='categoryBar'>
-                  {data?.map((item, index) => {
-                    return (
-                      <>
-                        <div className={index ? 'categoryItem active' : 'categoryItem'}
-                          key={index}
-                        >
-                          <Icon icon={item.icon} />
-                          <p onClick={() => navigate(`/CategoriesProd/${item.slug}`)}>
-                            {item.title}
-                          </p>
-
-                        </div>
-                      </>
-                    )
-                  }
-                  )}
-                </div>
-                : null
+              <Modal showDiv={showDiv} onClose={() => onClick()} class_style={class_style}>
+                <CategoryBar data={data} showDiv={showDiv}/>
+              </Modal>
             }
 
-            <div className='nav__input'>
+            <div className='absolute w-[531px] h-[54px] left-[28%] flex'>
               <input
                 type="text"
+                className="w-[443px] text-[15px] pl-[20px] pt-[25px] pb-[25px] font-[400] text-[#8C8C8C] border border-[#8C8C8C]"
                 placeholder="Search for anything"
                 value={searchQuery}
                 onChange={handleChange}
 
               />
-              <button className='nav__search' onClick={handleClicked}>
+              <button className='w-[88px] h-[54px] hover:rounded-lg hover:bg-[#D90303] rounded px-[20px] py-[5px] bg-[#EF0000] border border-[#EF0000]' onClick={handleClicked}>
                 <Icon
                   icon="ion:ios-search"
                   aria-hidden="true"
                   role="img"
-                  className="iconify iconify--ion"
+                  className="text-[#FDFDFD]"
                   width="2em"
                   height="2em"
                   viewBox="0 0 512 512"
@@ -146,7 +131,7 @@ function Navbar() {
                       left: 0,
                       top: 70,
                       className: "ul-filter",
-                      padding: "10px",
+                      padding: "15px",
                       zIndex: 999,
                       width: 180,
                       height: "50vh",
@@ -156,7 +141,7 @@ function Navbar() {
                   >
                     {products.map((product) => (
                       <li key={product.id}>
-                        <Link to={"/productDetails/" + product.slug}
+                        <Link to={"/product/" + product.slug}
                           style={{
                             textDecoration: "none",
                             cursor: "pointer",
@@ -182,14 +167,14 @@ function Navbar() {
               <Link to="">
                 <AccountDropDown />
               </Link>
-              <Link to="/Cart/:id">
+              <Link to={`/cart/${state[state.length - 1]?.slug}`}>
                 <Icon icon="ant-design:shopping-cart-outlined" />
                 <p>
                   {state.length}
                 </p>
                 Cart
               </Link>
-              <Link to="/Help">
+              <Link to="/help">
                 <Icon icon="bx:help-circle" />
                 Help
               </Link>

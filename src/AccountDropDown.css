@@ -1,10 +1,10 @@
 .dropdown_container {
     position: relative;
-    
+
     z-index: 1;
 }
 
-.dropdown_container > div {
+.dropdown_container>div {
     width: 140px;
     height: 43px;
     position: relative;
@@ -12,7 +12,7 @@
     gap: 5px;
 }
 
-.dropdown_container > div > button {
+.dropdown_container>div>button {
     position: absolute;
     text-decoration: none;
     border-color: var(--primary100);
@@ -26,7 +26,7 @@
     cursor: pointer;
 }
 
-.dropdown_container > div > button:focus {
+.dropdown_container>div>button:focus {
     border-color: var(--primary100);
     border-width: 0px;
     outline: unset;
@@ -34,21 +34,21 @@
 
 }
 
-.dropdown_container > div > svg.iconify.iconify--teenyicons {
+.dropdown_container>div>svg.iconify.iconify--teenyicons {
     left: 15px;
     width: 30px;
     height: 25px;
     position: absolute;
 }
 
-.dropdown_container > svg.iconify.iconify--ant-design {
+.dropdown_container>svg.iconify.iconify--ant-design {
     width: 25px;
     height: 25px;
     position: absolute;
     padding: 0px;
 }
 
- svg.iconify.iconify--bx {
+svg.iconify.iconify--bx {
     width: 25px;
     height: 25px;
 }
@@ -67,11 +67,11 @@
     left: 0px;
     padding: 15px;
 }
+
 .dropdown__list2 {
-    top: 30px;
+    top: 5px;
     width: 166px;
     position: absolute;
-    height: 59px;
     z-index: 1;
     background: #FFFFFF;
     display: flex;
@@ -97,13 +97,27 @@
     font-size: 15px;
     line-height: 18px;
 }
+
 .dropdown__list2 a:nth-child(1) {
-    position: absolute;
-    padding: 8px 40px;
+    padding: 8px 35px;
     width: 136px;
     height: 34px;
     background: #EF0000;
     color: var(--primary100);
+    border-radius: 5px;
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 18px;
+}
+
+.dropdown__list2 a:nth-child(2) {
+
+    height: 34px;
+    display: flex;
+    align-items: center;
+    color: #000000;
     border-radius: 5px;
     font-family: 'Lato';
     font-style: normal;
@@ -163,5 +177,3 @@
     padding-top: 7px;
     padding-left: 0px;
 }
-
-

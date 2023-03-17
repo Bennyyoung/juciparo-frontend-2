@@ -1,8 +1,28 @@
-import {configureStore} from '@reduxjs/toolkit';
+import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit';
 import rootReducers from './reducer';
+import { persistReducer } from "redux-persist";
+import storage from "redux-persist/lib/storage";
+// import ImmutableStateInvariantMiddleware from "@reduxjs/toolkit/dist/middleware/immutableStateInvariant"
+// import ImmutableStateInvariantMiddleware from '@reduxjs/toolkit/dist/middleware-immutable';
+// import immutableStateInvariantMiddleware from 'redux-immutable-state-invariant';
+
+
+const persistStorage = {
+    key: "user",
+    storage
+}
+
+const customizedMiddleware = getDefaultMiddleware({
+    serializableCheck: false,
+    // immutableCheck: false
+})
+// .filter(middleware => middleware !== immutableStateInvariantMiddleware)
+
+const persistedReducer = persistReducer(persistStorage, rootReducers);
 
 const store = configureStore({
-    reducer: rootReducers,
+    reducer: persistedReducer,
+    middleware: customizedMiddleware,
     devTools: true,
 })
 

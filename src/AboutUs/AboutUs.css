@@ -1,6 +1,6 @@
 .about__container {
     max-width: 100vw;
-    min-height: 285vh;
+    min-height: 165vh;
     align-items: center;
     background: #ffffff;
     position: relative;
@@ -233,7 +233,7 @@
 
 @media screen and (max-width: 600px) {
     .about__container {
-        min-height: 430vh;
+        min-height: 400vh;
     }
     .about__container >
      .discuss__container {
@@ -286,9 +286,7 @@
 }
 
 @media screen and (max-width: 360px) {
-    .about__container {
-        min-height: 470vh;
-    }
+
     .about__icon-section {
         top: 1090px;
     }

@@ -6,8 +6,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { Navigate, useNavigate } from "react-router-dom";
 import { login } from "../redux/auth";
 import { clearMessage } from "../redux/message";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { toast } from 'react-toastify';
+
 
 function MainLogin() {
     let navigate = useNavigate();
@@ -16,7 +16,8 @@ function MainLogin() {
         email: "",
         password: ""
     })
-    // const { isLoggedIn } = useSelector((state) => state.auth);
+    const response = useSelector((state) => state.auth);
+
     const { message } = useSelector((state) => state.message);
     const [successful, setSuccessful] = useState(false);
 
@@ -33,17 +34,25 @@ function MainLogin() {
 
 
     const handleSubmit = (e) => {
-        // setSuccessful(false);
+        setSuccessful(false);
         e.preventDefault()
         const { email, password } = formData
 
-        try {
+        if (email && password) {
             dispatch(login({ email, password }))
-            toast.success("Login Successful")
-            navigate("/");
-        } catch (err) {
-            toast.error("Invalid email or password")
+                .unwrap()
+                .then(() => {
+                    navigate("/");
+                })
+                .catch(() => {
+                    setSuccessful(false);
+                });
+
+        } else {
+            navigate("/AccountLogin");
+            toast.error("Please enter all fields")
         }
+
 
     }
 
@@ -67,7 +76,6 @@ function MainLogin() {
                     <button onClick={(e) => handleSubmit(e)} type="submit">
                         Sign In
                     </button>
-                    <ToastContainer />
                 </Link>
             </div>
 
@@ -95,7 +103,7 @@ function MainLogin() {
                     Continue with Google
                 </Link>
                 <h5>Don't have an account ?
-                    <Link to="/CreateAccount">Sign Up</Link>
+                    <Link to="/create-account">Sign Up</Link>
                 </h5>
             </div>
         </div>
