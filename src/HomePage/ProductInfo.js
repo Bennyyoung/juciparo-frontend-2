@@ -171,7 +171,7 @@ function ProductInfo() {
               {count === 0 ? setCount(1) : count}
             </div>
 
-            <button onClick={addProduct}>
+            <button onClick={() => addProduct(product)}>
               <Icon icon="ant-design:shopping-cart-outlined" />
               <Link to={"/cart/" + product?.slug}>
                 Add to Cart
